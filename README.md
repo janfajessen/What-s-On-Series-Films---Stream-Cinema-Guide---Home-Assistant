@@ -19,7 +19,9 @@
 [![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?style=for-the-badge&logo=paypal)](https://paypal.me/janfajessen)-->
 
 
-Qué hay en series y películas - ما الذي يعرض في المسلسلات والأفلام - Nə var seriallar və filmlər - Što ima u serijama i filmovima - Какво има в сериали и филми - Što ima u serijama i filmovima - Què hi ha en sèries i pel·lícules - Co je v seriálech a filmech - Hvad er der i serier og film - Was gibt es in Serien und Filmen - Τι παίζει σε σειρές και ταινίες - Qué hay en series y películas - Serietan eta filmetan zer dago - چه چیزی در سریال‌ها و فیلم‌هاست - Mitä sarjoissa ja elokuvissa on - Quoi dans les séries et films - Que hai nas series e filmes - מה יש בסדרות ובסרטים - सीरीज और फिल्मों में क्या है - Što ima u serijama i filmovima - Mi van a sorozatokban és filmekben - Apa yang ada di serial dan film - Hvað er í þáttum og kvikmyndum - Cosa c'è in serie e film - シリーズと映画に何があるか - რა არის სერიალებსა და ფილმებში - Что идёт в сериалах и фильмах - 시리즈와 영화에 무엇이 있나요 - Kas yra serialuose ir filmuose - Kas ir seriālos un filmās - Wat is er in series en films - Hva er i serier og filmer - Co jest w serialach i filmach - O que há nas séries e filmes - Ce este în seriale și filme - Що є у серіалах та фільмах - Čo je v seriáloch a filmoch - Kaj je v serijah in filmih - Çfarë ka në serialet dhe filmat - Шта има у серијама и филмовима - Vad finns det i serier och filmer - อะไรอยู่ในซีรีส์และภาพยนตร์ - Dizilerde ve filmlerde ne var - Có gì trong phim bộ và phim điện ảnh - 剧集和电影中有什么
+<sub>
+Qué hacen en streaming y en el cine - ما الذي يعرض في البث المباشر والسينما - Nə var streaming və kinoda - Što rade na streaming-u i u kinu - Какво правят в стрийминг и кино - Što rade na streaming-u i u kinu - Què fan en streaming i al cinema - Co dělají na streamování a v kině - Hvad laver de på streaming og i biografen - Was machen sie beim Streaming und im Kino - Τι κάνουν στο streaming και στον κινηματογράφο - Qué hacen en streaming y en el cine - Quoi qu'ils font en streaming et au cinéma - Que fan en streaming e no cine - מה הם עושים בסטרימינג ובקולנוע - स्ट्रीमिंग और सिनेमा में क्या करते हैं - Mit csinálnak a streamingben és a moziban - Zer egiten dute streaming-ean eta zinean - در استریم و سینما چه کار می‌کنند - Mitä he tekevät suoratoistossa ja elokuvissa - Apa yang mereka lakukan di streaming dan bioskop - Cosa fanno in streaming e al cinema - Что делают в стриминге и кино - Co robią w streamingu i kinie - O que eles fazem no streaming e no cinema - Ce fac în streaming și la cinema - Що роблять у стрімінгу та кіно - Vad gör de på streaming och bio - Dizilerde ve filmlerde ne yapıyorlar - 流媒体和电影院在放什么
+</sub>
 
 </div>
 
@@ -112,6 +114,8 @@ The TMDB API key is **free** and takes about 2 minutes to get:
 2. Add `https://github.com/janfajessen/whatson_series_films` — category **Integration**
 3. Search for **What's On Series & Films** and install
 4. Restart Home Assistant
+<img src="brands/icon@2x.png" width="100"/>
+
 
 ### Manual
 
@@ -374,7 +378,7 @@ All streaming sensor attributes include a `logo_url` with the official platform 
 | Source | Interval |
 |---|---|
 | TVmaze (show data) | Every 1 hour |
-| TMDB (streaming + cinema + logos) | Every 6 hours |
+| TMDB (streaming + cinema + logos) | Every 24 hours |
 
 TMDB streaming queries cover the last 14 days so content added mid-week is never missed between restarts.
 
@@ -396,7 +400,7 @@ The integration automatically maps your country code to the correct TMDB languag
 | Italy | IT | it-IT |
 | Japan | JP | ja-JP |
 | Korea | KR | ko-KR |
-| … | 79 countries mapped | … |
+| … | 49 countries mapped | … |
 
 ---
 
@@ -416,10 +420,15 @@ The integration automatically maps your country code to the correct TMDB languag
 
 ---
 
-Qué hay en series y películas - ما الذي يعرض في المسلسلات والأفلام - Nə var seriallar və filmlər - Što ima u serijama i filmovima - Какво има в сериали и филми - Što ima u serijama i filmovima - Què hi ha en sèries i pel·lícules - Co je v seriálech a filmech - Hvad er der i serier og film - Was gibt es in Serien und Filmen - Τι παίζει σε σειρές και ταινίες - Qué hay en series y películas - Serietan eta filmetan zer dago - چه چیزی در سریال‌ها و فیلم‌هاست - Mitä sarjoissa ja elokuvissa on - Quoi dans les séries et films - Que hai nas series e filmes - מה יש בסדרות ובסרטים - सीरीज और फिल्मों में क्या है - Mi van a sorozatokban és filmekben - Apa yang ada di serial dan film - Cosa c'è in serie e film - Что идёт в сериалах и фильмах - Co jest w serialach i filmach - O que há nas séries e filmes - Ce este în seriale și filme - Що є у серіалах та фільмах - Vad finns det i serier och filmer - Dizilerde ve filmlerde ne var - 剧集和电影中有什么
+<div align="center">
+<sub>
+Qué hacen en streaming y en el cine - ما الذي يعرض في البث المباشر والسينما - Nə var streaming və kinoda - Što rade na streaming-u i u kinu - Какво правят в стрийминг и кино - Što rade na streaming-u i u kinu - Què fan en streaming i al cinema - Co dělají na streamování a v kině - Hvad laver de på streaming og i biografen - Was machen sie beim Streaming und im Kino - Τι κάνουν στο streaming και στον κινηματογράφο - Qué hacen en streaming y en el cine - Quoi qu'ils font en streaming et au cinéma - Que fan en streaming e no cine - מה הם עושים בסטרימינג ובקולנוע - स्ट्रीमिंग और सिनेमा में क्या करते हैं - Mit csinálnak a streamingben és a moziban - Zer egiten dute streaming-ean eta zinean - در استریم و سینما چه کار می‌کنند - Mitä he tekevät suoratoistossa ja elokuvissa - Apa yang mereka lakukan di streaming dan bioskop - Cosa fanno in streaming e al cinema - Что делают в стриминге и кино - Co robią w streamingu i kinie - O que eles fazem no streaming e no cinema - Ce fac în streaming și la cinema - Що роблять у стрімінгу та кіно - Vad gör de på streaming och bio - Dizilerde ve filmlerde ne yapıyorlar - 流媒体和电影院在放什么
+</sub>
 
 ---
 
+<img src="brands/icon@2x.png" width="100"/>
+</div>
 ## License
 
 MIT — see [LICENSE](LICENSE)
