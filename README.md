@@ -429,7 +429,192 @@ Qué hacen en streaming y en el cine - ما الذي يعرض في البث ال
 
 <img src="brands/icon@2x.png" width="100"/>
 </div>
-## License
 
-MIT — see [LICENSE](LICENSE)
+## 🚀 Usage
+
+### Minimal (auto-discover everything)
+```yaml
+type: custom:whatson-series-films-card
+```
+
+### With options
+```yaml
+type: custom:whatson-series-films-card
+title: "What's On"
+theme: dark        # dark | light
+accent: "#e8872a"  # any hex color
+```
+
+### Specific sensors only
+```yaml
+type: custom:whatson-series-films-card
+entities:
+  - sensor.whatson_series_films_es_cinema_now_playing
+  - sensor.whatson_series_films_es_new_movies_on_netflix_standard_with_ads
+  - sensor.whatson_series_films_lupin_status
+```
+
+---
+
+## ⚙️ Configuration options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `title` | string | *(auto from HA language)* | Card title |
+| `theme` | `dark`\|`light` | `dark` | Color theme |
+| `accent` | string | `#e8872a` | Accent color (HEX or `R,G,B`) |
+| `entities` | list | *(auto-discover)* | Specific sensors to display |
+
+---
+
+## 🔧 Automations & Scripts
+
+### Notify when a new movie appears in theaters
+```yaml
+alias: "What's On — New cinema release"
+trigger:
+  - platform: template
+    value_template: >
+      {{ state_attr('sensor.whatson_series_films_es_cinema_now_playing', 'movies')
+         | selectattr('release_date', 'ge', now().strftime('%Y-%m-%d'))
+         | list | count > 0 }}
+action:
+  - service: notify.telegram_jan
+    data:
+      message: >
+        🎬 New in theaters today:
+        {% for m in state_attr('sensor.whatson_series_films_es_cinema_now_playing', 'movies')
+           if m.release_date == now().strftime('%Y-%m-%d') %}
+        • {{ m.title }} {% if m.vote_average > 0 %}(⭐{{ m.vote_average }}){% endif %}
+        {% endfor %}
+```
+
+### Notify when a followed series has a new episode
+```yaml
+alias: "What's On — New episode available"
+trigger:
+  - platform: state
+    entity_id: sensor.whatson_series_films_lupin_next_episode
+    from: "No upcoming episode"
+action:
+  - service: notify.telegram_jan
+    data:
+      message: >
+        📺 New episode of **Lupin**!
+        {{ states('sensor.whatson_series_films_lupin_next_episode') }}
+```
+
+### Send weekly streaming highlights to Telegram with poster
+```yaml
+alias: "What's On — Weekly highlights"
+trigger:
+  - platform: time
+    at: "09:00:00"
+  - platform: template
+    value_template: "{{ now().weekday() == 4 }}"  # Friday
+action:
+  - variables:
+      movies: "{{ state_attr('sensor.whatson_series_films_es_new_movies_on_netflix_standard_with_ads', 'movies') }}"
+  - service: telegram_bot.send_message
+    data:
+      target:
+        - "{{ states('input_text.telegram_chat_jan') }}"
+      message: >
+        🎬 *New on Netflix this week:*
+        {% for m in movies[:5] %}
+        • {{ m.title }}{% if m.vote_average > 0 %} ⭐{{ m.vote_average }}{% endif %}
+        {% endfor %}
+```
+
+### Display now-playing count as a sensor badge
+```yaml
+template:
+  - sensor:
+      - name: "Cinema now playing count"
+        state: >
+          {{ state_attr('sensor.whatson_series_films_es_cinema_now_playing', 'movies') | count }}
+        icon: mdi:ticket-confirmation-outline
+```
+
+---
+
+## 🗺️ Available countries
+
+The What's On TV integration supports the following countries for cinema and streaming platforms. Use the 2-letter country code in your integration configuration.
+
+### 🎬 Cinema (TMDB Now Playing / Upcoming)
+
+|<sub>Flag</sub> |<sub>Country</sub> |<sub>Code</sub> |
+|------|---------|------|
+|<sub>🇦🇩</sub> | <sub>Andorra</sub> |<sub>`AD`</sub> |
+|<sub>🇦🇷</sub> | <sub>Argentina</sub>|<sub>`AR`</sub> |
+|<sub>🇦🇺</sub> |<sub>Australia |<sub>`AU`</sub> |
+|<sub>🇦🇹</sub> |<sub>Austria</sub> |<sub>`AT`</sub> |
+|<sub>🇧🇪</sub> |<sub>Belgium</sub> |<sub>`BE`</sub> |
+|<sub>🇧🇷</sub> |<sub>Brazil</sub> |<sub>`BR`</sub> |
+|<sub>🇨🇦</sub> |<sub>Canada</sub> |<sub>`CA`</sub> |
+|<sub>🇨🇱</sub> |<sub>Chile</sub> |<sub>`CL`</sub> |
+|<sub>🇨🇴</sub> |<sub>Colombia</sub> |<sub>`CO`</sub> |
+|<sub>🇨🇿</sub> |<sub>Czech Republic</sub> |<sub>`CZ`</sub> |
+|<sub>🇩🇰</sub> |<sub>Denmark</sub> |<sub>`DK`</sub> |
+|<sub>🇫🇮</sub> |<sub>Finland</sub> |<sub>`FI`</sub> |
+|<sub>🇫🇷</sub> |<sub>France</sub> |<sub>`FR`</sub> |
+|<sub>🇩🇪</sub> |<sub>Germany</sub> |<sub>`DE`</sub> |
+|<sub>🇬🇷</sub> |<sub>Greece</sub> |<sub>`GR`</sub> |
+|<sub>🇭🇰</sub> |<sub>Hong Kong</sub> |<sub>`HK`</sub> |
+|<sub>🇭🇺</sub> |<sub>Hungary</sub> |<sub>`HU`</sub> |
+|<sub>🇮🇳</sub> |<sub>India</sub> |<sub>`IN`</sub> |
+|<sub>🇮🇩</sub> |<sub>Indonesia</sub> |<sub>`ID`</sub> |
+|<sub>🇮🇪</sub> |<sub>Ireland</sub> |<sub>`IE`</sub> |
+|<sub>🇮🇱</sub> |<sub>Israel</sub> |<sub>`IL`</sub> |
+|<sub>🇮🇹</sub> |<sub>Italy</sub> |<sub>`IT`</sub> |
+|<sub>🇯🇵</sub> |<sub>Japan</sub> |<sub>`JP`</sub> |
+|<sub>🇲🇽</sub> |<sub>Mexico</sub> |<sub>`MX`</sub> |
+|<sub>🇳🇱</sub> |<sub>Netherlands</sub> |<sub>`NL`</sub> |
+|<sub>🇳🇿</sub> |<sub>New Zealand</sub> |<sub>`NZ`</sub> |
+|<sub>🇳🇴</sub> |<sub>Norway</sub> |<sub>`NO`</sub> |
+|<sub>🇵🇱</sub> |<sub>Poland</sub> |<sub>`PL`</sub> |
+|<sub>🇵🇹</sub> |<sub>Portugal</sub> |<sub>`PT`</sub> |
+|<sub>🇷🇴</sub> |<sub>Romania</sub> |<sub>`RO`</sub> |
+|<sub>🇷🇺</sub> |<sub>Russia</sub> |<sub>`RU`</sub> |
+|<sub>🇸🇦</sub> |<sub>Saudi Arabia</sub> |<sub>`SA`</sub> |
+|<sub>🇸🇬</sub> |<sub>Singapore</sub> |<sub>`SG`</sub> |
+|<sub>🇰🇷</sub> |<sub>South Korea</sub> |<sub>`KR`</sub> |
+|<sub>🇪🇸</sub> |<sub>Spain</sub> |<sub>`ES`</sub> |
+|<sub>🇸🇪</sub> |<sub>Sweden</sub> |<sub>`SE`</sub> |
+|<sub>🇨🇭</sub> |<sub>Switzerland</sub> |<sub>`CH`</sub> |
+|<sub>🇹🇼</sub> |<sub>Taiwan</sub> |<sub>`TW`</sub> |
+|<sub>🇹🇭</sub> |<sub>Thailand</sub> |<sub>`TH`</sub> |
+|<sub>🇹🇷</sub> |<sub>Turkey</sub> |<sub>`TR`</sub> |
+|<sub>🇬🇧</sub> |<sub>United Kingdom</sub> |<sub>`GB`</sub> |
+|<sub>🇺🇸</sub> |<sub>United States</sub> |<sub>`US`</sub> |
+|<sub>🇻🇪</sub> |<sub>Venezuela</sub> |<sub>`VE`</sub> |
+
+### 📡 Streaming platforms availability
+
+Availability varies by country. The most common platforms supported:
+
+| Platform | Main countries |
+|----------|---------------|
+| Netflix | 🌍 Worldwide (190+ countries) |
+| Amazon Prime Video | 🌍 Worldwide (200+ countries) |
+| Disney+ | 🇺🇸🇬🇧🇪🇸🇫🇷🇩🇪🇮🇹🇦🇺🇨🇦🇯🇵 + more |
+| HBO Max / Max | 🇺🇸🇬🇧🇪🇸🇵🇹🇳🇱🇸🇪🇩🇰🇳🇴🇫🇮 + more |
+| Apple TV+ | 🌍 Worldwide |
+| Hulu | 🇺🇸 |
+| Peacock | 🇺🇸 |
+| Paramount+ | 🇺🇸🇬🇧🇪🇸🇫🇷🇩🇪🇮🇹🇦🇺🇨🇦 + more |
+| Movistar+ | 🇪🇸 |
+|3Cat | 🇪🇸 <sub>(Catalunya)</sub> |
+| RTVE Play | 🇪🇸 |
+| Atresplayer | 🇪🇸 |
+
+---
+
+---
+
+## 📄 License
+
+MIT License — © janfajessen
+
 
