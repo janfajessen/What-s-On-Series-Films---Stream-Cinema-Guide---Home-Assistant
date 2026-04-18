@@ -66,7 +66,7 @@ Qué hay en series y películas - ما الذي يعرض في المسلسلات
 
 The TMDB API key is **free** and takes about 2 minutes to get:
 
-1. Go to <a href="https://www.themoviedb.org/" target="_blank">[themoviedb.org]</a> 
+1. Go to <a href="https://www.themoviedb.org/" target="_blank">themoviedb.org</a> 
 2. Fill in username, email and password → verify your email
 3. Log in and go to **Settings** (click your avatar, top right) → **API**
 4. Click **Create** → choose **Developer** (personal use)
