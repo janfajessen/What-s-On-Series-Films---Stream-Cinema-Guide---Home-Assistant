@@ -184,6 +184,7 @@ class WhatsonSeriesFilmsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         self._provider_map:   dict[str, int] = {}
         self._shows:          list[dict]     = []
         self._tvmaze_results: list[dict]     = []
+        self._reconfiguring:  bool           = False
 
     # Step 1 — API key
 
@@ -290,6 +291,8 @@ class WhatsonSeriesFilmsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             self._data[CONF_PROVIDER_MAP] = {
                 n: self._provider_map[n] for n in selected if n in self._provider_map
             }
+            if self._reconfiguring:
+                return self._finish_reconfigure()
             return await self.async_step_tvmaze()
 
         options = [{"value": n, "label": n} for n in self._provider_map]
@@ -376,6 +379,64 @@ class WhatsonSeriesFilmsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         data[CONF_SHOWS] = self._shows
         country = data.get(CONF_COUNTRY, "XX")
         return self.async_create_entry(title=f"{NAME} — {country}", data=data)
+
+
+    async def async_step_reconfigure(self, user_input=None):
+        """Handle reconfiguration from ⋮ → Reconfigurar.
+
+        Reuses the same API-key → country → platforms flow but updates
+        the existing entry instead of creating a new one.
+        """
+        existing = self._get_reconfigure_entry()
+        # Pre-populate with current values
+        if not self._api_key and existing.data.get(CONF_TMDB_API_KEY):
+            self._api_key = existing.data[CONF_TMDB_API_KEY]
+
+        if user_input is None:
+            # Show the API key step pre-filled
+            return self.async_show_form(
+                step_id="reconfigure",
+                data_schema=vol.Schema({
+                    vol.Optional(
+                        CONF_TMDB_API_KEY,
+                        default=existing.data.get(CONF_TMDB_API_KEY, ""),
+                    ): TextSelector(TextSelectorConfig(type=TextSelectorType.PASSWORD)),
+                }),
+            )
+
+        api_key = user_input.get(CONF_TMDB_API_KEY, "").strip()
+        errors: dict[str, str] = {}
+
+        if api_key:
+            session = async_get_clientsession(self.hass)
+            if not await _validate_tmdb_key(session, api_key):
+                errors["base"] = "invalid_tmdb_key"
+                return self.async_show_form(
+                    step_id="reconfigure",
+                    errors=errors,
+                    data_schema=vol.Schema({
+                        vol.Optional(CONF_TMDB_API_KEY, default=api_key): TextSelector(
+                            TextSelectorConfig(type=TextSelectorType.PASSWORD)
+                        ),
+                    }),
+                )
+            self._api_key = api_key
+            self._regions = await _fetch_regions(session, api_key)
+        else:
+            self._api_key = ""
+
+        # Reuse country step — will call async_step_platforms then finish
+        self._reconfiguring = True
+        return await self.async_step_country()
+
+    def _finish_reconfigure(self) -> config_entries.FlowResult:
+        """Commit updated data back to the existing entry."""
+        existing = self._get_reconfigure_entry()
+        data = dict(self._data)
+        # Preserve existing shows — reconfigure only touches TMDB settings
+        data[CONF_SHOWS] = existing.data.get(CONF_SHOWS, [])
+        self.hass.config_entries.async_update_entry(existing, data=data)
+        return self.async_abort(reason="reconfigure_successful")
 
     @staticmethod
     @callback
@@ -518,6 +579,65 @@ class WhatsonSeriesFilmsOptionsFlow(config_entries.OptionsFlow):
                 vol.Optional(
                     CONF_PLATFORMS,
                     default=current.get(CONF_PLATFORMS, []),
+                ): SelectSelector(
+                    SelectSelectorConfig(options=options, multiple=True, mode=SelectSelectorMode.LIST)
+                ),
+            }),
+        )
+
+    async def async_step_update_tmdb(self, user_input=None):
+        errors: dict[str, str] = {}
+        current = self.config_entry.data
+
+        if not self._regions:
+            api_key = current.get(CONF_TMDB_API_KEY, "")
+            if api_key:
+                session = async_get_clientsession(self.hass)
+                self._regions = await _fetch_regions(session, api_key)
+
+        if user_input is not None:
+            api_key  = user_input.get(CONF_TMDB_API_KEY, "").strip()
+            country  = str(user_input.get(CONF_COUNTRY, "ES")).strip().upper()
+            language = _language_from(country, user_input.get(CONF_LANGUAGE) or "")
+
+            if api_key:
+                session = async_get_clientsession(self.hass)
+                if not await _validate_tmdb_key(session, api_key):
+                    errors["base"] = "invalid_tmdb_key"
+                else:
+                    self._regions  = await _fetch_regions(session, api_key)
+                    new_providers  = await _fetch_providers(session, api_key, country, language)
+                    new_data = dict(current)
+                    new_data.update({
+                        CONF_TMDB_API_KEY:  api_key,
+                        CONF_COUNTRY:       country,
+                        CONF_LANGUAGE:      language,
+                        CONF_PROVIDER_MAP:  new_providers,
+                    })
+                    self.hass.config_entries.async_update_entry(self.config_entry, data=new_data)
+                    return self.async_create_entry(title="", data={})
+            else:
+                new_data = dict(current)
+                new_data.update({CONF_TMDB_API_KEY: "", CONF_COUNTRY: country, CONF_LANGUAGE: language})
+                self.hass.config_entries.async_update_entry(self.config_entry, data=new_data)
+                return self.async_create_entry(title="", data={})
+
+        options = self._regions or [
+            {"value": "ES", "label": "\U0001f1ea\U0001f1f8 Spain"},
+            {"value": "US", "label": "\U0001f1fa\U0001f1f8 United States"},
+        ]
+
+        return self.async_show_form(
+            step_id="update_tmdb",
+            errors=errors,
+            data_schema=vol.Schema({
+                vol.Optional(
+                    CONF_TMDB_API_KEY,
+                    default=current.get(CONF_TMDB_API_KEY, ""),
+                ): TextSelector(TextSelectorConfig(type=TextSelectorType.PASSWORD)),
+                vol.Required(
+                    CONF_COUNTRY,
+                    default=current.get(CONF_COUNTRY, "ES"),
                 ): SelectSelector(
                     SelectSelectorConfig(options=options, mode=SelectSelectorMode.DROPDOWN)
                 ),

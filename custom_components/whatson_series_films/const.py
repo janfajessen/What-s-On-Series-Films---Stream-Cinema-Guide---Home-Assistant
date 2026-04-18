@@ -21,16 +21,16 @@ TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 TMDB_IMAGE_ORIG_URL = "https://image.tmdb.org/t/p/original"
 
 # ── Update intervals ─────────────────────────────────────────────────────────
-SCAN_INTERVAL_TVMAZE = timedelta(hours=1)
-SCAN_INTERVAL_TMDB   = timedelta(hours=6)
+SCAN_INTERVAL_TVMAZE = timedelta(hours=24)
+SCAN_INTERVAL_TMDB   = timedelta(hours=24)
 
 # ── Results limits ───────────────────────────────────────────────────────────
 TMDB_MAX_RESULTS          = 50
 TMDB_MAX_CINEMA_RESULTS   = 50
-TVMAZE_MAX_SEARCH_RESULTS = 15
+TVMAZE_MAX_SEARCH_RESULTS = 10
 
 # ── Lookback window for "new on platform" queries ────────────────────────────
-TMDB_LOOKBACK_DAYS = 21
+TMDB_LOOKBACK_DAYS = 14
 
 # ── Country → TMDB language code ─────────────────────────────────────────────
 # Used to localise titles and overviews in TMDB responses.

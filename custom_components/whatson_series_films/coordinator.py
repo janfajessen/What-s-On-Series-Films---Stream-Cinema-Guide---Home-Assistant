@@ -275,32 +275,50 @@ class TMDBCoordinator(DataUpdateCoordinator[dict]):
 
     async def _get_results(self, url: str, params: dict,
                            limit: int) -> list[dict]:
-        """Generic TMDB GET → normalised item list."""
-        try:
-            async with self._session.get(
-                url, params=params, timeout=aiohttp.ClientTimeout(total=15)
-            ) as resp:
-                resp.raise_for_status()
-                payload = await resp.json()
+        """Generic TMDB GET → normalised item list.
 
-            return [
-                {
-                    "title":        item.get("title") or item.get("name", ""),
-                    "release_date": (item.get("release_date")
-                                     or item.get("first_air_date", "")),
-                    "genre_ids":    item.get("genre_ids", []),
-                    "vote_average": round(item.get("vote_average", 0.0), 1),
-                    "poster_url":   (
-                        f"{TMDB_IMAGE_BASE_URL}{item['poster_path']}"
-                        if item.get("poster_path") else None
-                    ),
-                    "overview":     item.get("overview", ""),
-                    "tmdb_id":      item.get("id"),
-                    "region_fallback": False,
-                }
-                for item in payload.get("results", [])[:limit]
-            ]
+        TMDB returns at most 20 results per page. When limit > 20 we fetch
+        additional pages until we have enough results or run out of pages.
+        Max pages fetched is capped at 3 to avoid excessive API calls.
+        """
+        collected: list[dict] = []
+        page = 1
+        total_pages = 1
+
+        try:
+            while len(collected) < limit and page <= total_pages:
+                page_params = dict(params)
+                page_params["page"] = page
+                async with self._session.get(
+                    url, params=page_params, timeout=aiohttp.ClientTimeout(total=15)
+                ) as resp:
+                    resp.raise_for_status()
+                    payload = await resp.json()
+
+                if page == 1:
+                    total_pages = min(payload.get("total_pages", 1), 3)
+
+                for item in payload.get("results", []):
+                    if len(collected) >= limit:
+                        break
+                    collected.append({
+                        "title":           item.get("title") or item.get("name", ""),
+                        "release_date":    (item.get("release_date")
+                                            or item.get("first_air_date", "")),
+                        "genre_ids":       item.get("genre_ids", []),
+                        "vote_average":    round(item.get("vote_average", 0.0), 1),
+                        "poster_url":      (
+                            f"{TMDB_IMAGE_BASE_URL}{item['poster_path']}"
+                            if item.get("poster_path") else None
+                        ),
+                        "overview":        item.get("overview", ""),
+                        "tmdb_id":         item.get("id"),
+                        "region_fallback": False,
+                    })
+                page += 1
+
         except Exception as err:
             _LOGGER.warning("TMDB request failed (%s): %s", url, err)
-            return []
-            
+
+        return collected
+        
