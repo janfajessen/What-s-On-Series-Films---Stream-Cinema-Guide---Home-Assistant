@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API ključ",
+        "description": "Vnesite svoj brezplačni TMDB API ključ za omogočanje funkcij pretakanja in kina. Pustite prazno za uporabo samo TVmaze (ključ ni potreben).\n\nPridobite brezplačni ključ na [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Razvijalec → Osebna uporaba.",
+        "data": {
+          "tmdb_api_key": "TMDB API ključ (neobvezno)"
+        }
+      },
+      "country": {
+        "title": "Država in jezik",
+        "description": "Izberite svojo državo s seznama držav, ki jih podpira TMDB. Jezik za naslove in opise se samodejno zazna — prepišite samo, če je potrebno.",
+        "data": {
+          "country": "Država",
+          "language": "Jezik (neobvezen — samodejno iz države)"
+        }
+      },
+      "platforms": {
+        "title": "Platforme za pretakanje",
+        "description": "To so platforme, ki so na voljo v vaši državi po podatkih TMDB. Izberite tiste, na katere ste naročeni.",
+        "data": {
+          "platforms": "Platforme za pretakanje"
+        }
+      },
+      "tvmaze": {
+        "title": "Sledite seriji ali dokumentarcu",
+        "description": "Vnesite ime za iskanje po TVmaze. Pustite prazno, da končate brez dodajanja serije.",
+        "data": {
+          "show_name": "Ime serije / dokumentarca"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Izberite serijo / dokumentarec",
+        "description": "Izberite pravilen rezultat s seznama.",
+        "data": {
+          "show_id": "Serija / dokumentarec"
+        }
+      },
+      "add_another": {
+        "title": "Dodati drugo serijo ali dokumentarec?",
+        "description": "Dodano doslej: **{shows_added}**",
+        "data": {
+          "add_another": "Dodaj drugo serijo ali dokumentarec"
+        }
+      },
+      "reconfigure": {
+        "title": "Ponovno konfigurirajte What's On Series & Films",
+        "description": "Posodobite svoj TMDB API ključ. Izbira države in platforme bo sledila na naslednjih zaslonih.",
+        "data": {
+          "tmdb_api_key": "TMDB API ključ"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Neveljaven TMDB API ključ ali storitev nedosegljiva.",
+      "no_results": "Ni najdenih rezultatov. Poskusite z drugačnim črkovanjem.",
+      "cannot_connect": "Ni mogoče vzpostaviti povezave. Preverite svojo internetno povezavo."
+    },
+    "abort": {
+      "already_configured": "Ta država je že konfigurirana. Uporabite možnosti (⚙) za upravljanje ali dodajte nov vnos za drugo državo.",
+      "reconfigure_successful": "Ponovna konfiguracija uspešna."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Možnosti",
+        "description": "Kaj želite storiti?",
+        "data": {
+          "action": "Dejanje"
+        }
+      },
+      "tvmaze": {
+        "title": "Dodajte serijo ali dokumentarec",
+        "description": "Poiščite na TVmaze serijo ali dokumentarec, ki mu želite slediti.",
+        "data": {
+          "show_name": "Ime serije / dokumentarca"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Izberite serijo / dokumentarec",
+        "data": {
+          "show_id": "Serija / dokumentarec"
+        }
+      },
+      "remove_show": {
+        "title": "Odstranite serijo ali dokumentarec",
+        "description": "Izberite tisto, ki ji ne želite več slediti.",
+        "data": {
+          "show_id": "Serija / dokumentarec"
+        }
+      },
+      "update_platforms": {
+        "title": "Spremenite platforme za pretakanje",
+        "description": "Seznam se v živo pridobi iz TMDB za vašo državo.",
+        "data": {
+          "platforms": "Platforme za pretakanje"
+        }
+      },
+      "update_tmdb": {
+        "title": "Posodobite TMDB ključ / državo / jezik",
+        "description": "Seznam držav se v živo pridobi iz TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API ključ",
+          "country": "Država",
+          "language": "Jezik (neobvezen)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Neveljaven TMDB API ključ ali storitev nedosegljiva.",
+      "no_results": "Ni najdenih rezultatov."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Stanje",
+        "state": {
+          "Running": "Teče",
+          "Ended": "Končano",
+          "To Be Determined": "Bo določeno",
+          "In Development": "V razvoju",
+          "Canceled/Ended": "Preklicano",
+          "In Limbo": "V negotovosti",
+          "Unknown": "Neznano"
+        }
+      }
+    }
+  }
+}
