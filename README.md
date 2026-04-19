@@ -733,7 +733,15 @@ Availability varies by country. The most common platforms supported:
 | Atresplayer | 🇪🇸 |
 
 ---
+<div align="center">
+  
 
+<img src="https://github.com/janfajessen/What-s-On-TV-Search-and-Notify-Card/blob/b3645cf0af684bdde893675cb4c80660424873ba/home_assistant_logo.png" alt="Home Assistant" width="60">
+
+<br>
+<img src="brands/logo@2x.png" width="100"/>
+  
+</div>
 ---
 
 ## 📄 License
