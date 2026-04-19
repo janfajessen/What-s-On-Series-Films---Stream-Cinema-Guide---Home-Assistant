@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API lykill",
+        "description": "Sláðu inn ókeypis TMDB API lykilinn þinn til að virkja streymis- og kvikmyndaaðgerðir. Skildu eftir autt til að nota aðeins TVmaze (enginn lykill þarf).\n\nFáðu ókeypis lykil á [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Forritari → Persónuleg notkun.",
+        "data": {
+          "tmdb_api_key": "TMDB API lykill (valfrjálst)"
+        }
+      },
+      "country": {
+        "title": "Land og tungumál",
+        "description": "Veldu landið þitt af listanum yfir lönd sem TMDB styður. Tungumál titla og lýsinga greinist sjálfkrafa — hnekkðu aðeins ef þörf krefur.",
+        "data": {
+          "country": "Land",
+          "language": "Tungumál (valfrjálst — sjálfkrafa frá landi)"
+        }
+      },
+      "platforms": {
+        "title": "Streymisvettvangar",
+        "description": "Þetta eru vettvangarnir sem eru í boði í þínu landi samkvæmt TMDB. Veldu þá sem þú ert áskrifandi að.",
+        "data": {
+          "platforms": "Streymisvettvangar"
+        }
+      },
+      "tvmaze": {
+        "title": "Fylgstu með þáttaröð eða heimildarmynd",
+        "description": "Sláðu inn nafn til að leita á TVmaze. Skildu eftir autt til að ljúka án þess að bæta við neinni þáttaröð.",
+        "data": {
+          "show_name": "Nafn þáttaraðar / heimildarmyndar"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Veldu þáttaröð / heimildarmynd",
+        "description": "Veldu rétta niðurstöðu af listanum.",
+        "data": {
+          "show_id": "Þáttaröð / heimildarmynd"
+        }
+      },
+      "add_another": {
+        "title": "Bæta við annarri þáttaröð eða heimildarmynd?",
+        "description": "Bætt við hingað til: **{shows_added}**",
+        "data": {
+          "add_another": "Bæta við annarri þáttaröð eða heimildarmynd"
+        }
+      },
+      "reconfigure": {
+        "title": "Endurstilla What's On Series & Films",
+        "description": "Uppfærðu TMDB API lykilinn þinn. Val á landi og vettvangi mun fylgja á næstu skjám.",
+        "data": {
+          "tmdb_api_key": "TMDB API lykill"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ógildur TMDB API lykill eða þjónusta ekki tiltæk.",
+      "no_results": "Engar niðurstöður fundust. Prófaðu aðra stafsetningu.",
+      "cannot_connect": "Get ekki tengst. Athugaðu nettenginguna þína."
+    },
+    "abort": {
+      "already_configured": "Þetta land er þegar stillt. Notaðu valkosti (⚙) til að stjórna því, eða bættu við nýrri færslu fyrir annað land.",
+      "reconfigure_successful": "Endurstilling tókst."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Valkostir",
+        "description": "Hvað viltu gera?",
+        "data": {
+          "action": "Aðgerð"
+        }
+      },
+      "tvmaze": {
+        "title": "Bæta við þáttaröð eða heimildarmynd",
+        "description": "Leitaðu á TVmaze að þáttaröðinni eða heimildarmyndinni sem þú vilt fylgjast með.",
+        "data": {
+          "show_name": "Nafn þáttaraðar / heimildarmyndar"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Veldu þáttaröð / heimildarmynd",
+        "data": {
+          "show_id": "Þáttaröð / heimildarmynd"
+        }
+      },
+      "remove_show": {
+        "title": "Fjarlægja þáttaröð eða heimildarmynd",
+        "description": "Veldu þá sem þú vilt hætta að fylgjast með.",
+        "data": {
+          "show_id": "Þáttaröð / heimildarmynd"
+        }
+      },
+      "update_platforms": {
+        "title": "Breyta streymisvettvangi",
+        "description": "Listinn er sóttur í beinni frá TMDB fyrir þitt land.",
+        "data": {
+          "platforms": "Streymisvettvangar"
+        }
+      },
+      "update_tmdb": {
+        "title": "Uppfæra TMDB lykil / land / tungumál",
+        "description": "Landalistinn er sóttur í beinni frá TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API lykill",
+          "country": "Land",
+          "language": "Tungumál (valfrjálst)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ógildur TMDB API lykill eða þjónusta ekki tiltæk.",
+      "no_results": "Engar niðurstöður fundust."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Staða",
+        "state": {
+          "Running": "Í gangi",
+          "Ended": "Lokið",
+          "To Be Determined": "Ákveðst síðar",
+          "In Development": "Í þróun",
+          "Canceled/Ended": "Hætt við",
+          "In Limbo": "Í uppnámi",
+          "Unknown": "Óþekkt"
+        }
+      }
+    }
+  }
+}
