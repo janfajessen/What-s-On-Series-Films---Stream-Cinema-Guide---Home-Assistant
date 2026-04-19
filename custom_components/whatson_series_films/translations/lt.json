@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API raktas",
+        "description": "Įveskite savo nemokamą TMDB API raktą, kad įjungtumėte srautinio perdavimo ir kino funkcijas. Palikite tuščią, jei norite naudoti tik TVmaze (rakto nereikia).\n\nGaukite nemokamą raktą [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Kūrėjas → Asmeninis naudojimas.",
+        "data": {
+          "tmdb_api_key": "TMDB API raktas (neprivaloma)"
+        }
+      },
+      "country": {
+        "title": "Šalis ir kalba",
+        "description": "Pasirinkite savo šalį iš TMDB palaikomų šalių sąrašo. Pavadinimų ir aprašymų kalba nustatoma automatiškai — pakeiskite tik jei reikia.",
+        "data": {
+          "country": "Šalis",
+          "language": "Kalba (neprivaloma — automatiškai iš šalies)"
+        }
+      },
+      "platforms": {
+        "title": "Srautinio perdavimo platformos",
+        "description": "Tai yra platformos, pasiekiamos jūsų šalyje pagal TMDB. Pasirinkite tas, kurioms esate prenumeravę.",
+        "data": {
+          "platforms": "Srautinio perdavimo platformos"
+        }
+      },
+      "tvmaze": {
+        "title": "Sekti serialą ar dokumentiką",
+        "description": "Įveskite pavadinimą, norėdami ieškoti TVmaze. Palikite tuščią, kad baigtumėte nepridėję jokio serialo.",
+        "data": {
+          "show_name": "Serialo / dokumentikos pavadinimas"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Pasirinkite serialą / dokumentiką",
+        "description": "Pasirinkite teisingą rezultatą iš sąrašo.",
+        "data": {
+          "show_id": "Serialas / dokumentika"
+        }
+      },
+      "add_another": {
+        "title": "Pridėti kitą serialą ar dokumentiką?",
+        "description": "Iki šiol pridėta: **{shows_added}**",
+        "data": {
+          "add_another": "Pridėti kitą serialą ar dokumentiką"
+        }
+      },
+      "reconfigure": {
+        "title": "Pertvarkyti What's On Series & Films",
+        "description": "Atnaujinkite savo TMDB API raktą. Šalies ir platformos pasirinkimas bus tęsiamas kitose srityse.",
+        "data": {
+          "tmdb_api_key": "TMDB API raktas"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Neteisingas TMDB API raktas arba paslauga nepasiekiama.",
+      "no_results": "Rezultatų nerasta. Išbandykite kitą rašybą.",
+      "cannot_connect": "Nepavyksta prisijungti. Patikrinkite savo interneto ryšį."
+    },
+    "abort": {
+      "already_configured": "Ši šalis jau sukonfigūruota. Naudokite parinktis (⚙) norėdami ją valdyti arba pridėkite naują įrašą kitai šaliai.",
+      "reconfigure_successful": "Pertvarkymas sėkmingas."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Parinktys",
+        "description": "Ką norėtumėte daryti?",
+        "data": {
+          "action": "Veiksmas"
+        }
+      },
+      "tvmaze": {
+        "title": "Pridėti serialą ar dokumentiką",
+        "description": "Ieškokite TVmaze serialo ar dokumentikos, kurią norite sekti.",
+        "data": {
+          "show_name": "Serialo / dokumentikos pavadinimas"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Pasirinkite serialą / dokumentiką",
+        "data": {
+          "show_id": "Serialas / dokumentika"
+        }
+      },
+      "remove_show": {
+        "title": "Pašalinti serialą ar dokumentiką",
+        "description": "Pasirinkite tą, kurį norite nustoti sekti.",
+        "data": {
+          "show_id": "Serialas / dokumentika"
+        }
+      },
+      "update_platforms": {
+        "title": "Pakeisti srautinio perdavimo platformas",
+        "description": "Sąrašas gaunamas tiesiogiai iš TMDB jūsų šaliai.",
+        "data": {
+          "platforms": "Srautinio perdavimo platformos"
+        }
+      },
+      "update_tmdb": {
+        "title": "Atnaujinti TMDB raktą / šalį / kalbą",
+        "description": "Šalių sąrašas gaunamas tiesiogiai iš TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API raktas",
+          "country": "Šalis",
+          "language": "Kalba (neprivaloma)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Neteisingas TMDB API raktas arba paslauga nepasiekiama.",
+      "no_results": "Rezultatų nerasta."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Būsena",
+        "state": {
+          "Running": "Vyksta",
+          "Ended": "Baigtas",
+          "To Be Determined": "Bus nustatyta",
+          "In Development": "Vystymo metu",
+          "Canceled/Ended": "Atšauktas",
+          "In Limbo": "Neaiškus",
+          "Unknown": "Nežinomas"
+        }
+      }
+    }
+  }
+}
