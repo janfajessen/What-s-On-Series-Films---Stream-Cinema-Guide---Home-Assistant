@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API Schlëssel",
+        "description": "Gitt äre fräien TMDB API Schlëssel an fir Streaming- a Kinosfunktiounen z'aktivéieren. Loosst eidel fir nëmmen TVmaze ze benotzen (kee Schlëssel néideg).\n\nKritt e fräie Schlëssel op [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Entwéckler → Perséinlech Notzung.",
+        "data": {
+          "tmdb_api_key": "TMDB API Schlëssel (optional)"
+        }
+      },
+      "country": {
+        "title": "Land & Sprooch",
+        "description": "Wielt Äert Land aus der Lëscht vu Länner, déi vum TMDB ënnerstëtzt ginn. D'Sprooch fir Titelen a Beschreiwunge gëtt automatesch erkannt — nëmmen iwwerschreiwen wann néideg.",
+        "data": {
+          "country": "Land",
+          "language": "Sprooch (optional — automatesch vum Land)"
+        }
+      },
+      "platforms": {
+        "title": "Streaming Plattformen",
+        "description": "Dëst sinn d'Plattformen, déi an Ärem Land laut TMDB verfügbar sinn. Wielt déi aus, déi Dir abonnéiert hutt.",
+        "data": {
+          "platforms": "Streaming Plattformen"
+        }
+      },
+      "tvmaze": {
+        "title": "Eng Serie oder Dokumentar verfollegen",
+        "description": "Gitt en Numm fir TVmaze ze sichen. Loosst eidel fir ofzeschléissen ouni eng Serie derbäizesetzen.",
+        "data": {
+          "show_name": "Serie / Dokumentar Numm"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Wielt Serie / Dokumentar",
+        "description": "Wielt dat richtegt Resultat aus der Lëscht.",
+        "data": {
+          "show_id": "Serie / Dokumentar"
+        }
+      },
+      "add_another": {
+        "title": "Eng aner Serie oder Dokumentar derbäisetzen?",
+        "description": "Bis elo derbäigesat: **{shows_added}**",
+        "data": {
+          "add_another": "Eng aner Serie oder Dokumentar derbäisetzen"
+        }
+      },
+      "reconfigure": {
+        "title": "What's On Series & Films nei konfiguréieren",
+        "description": "Aktualiséiert ären TMDB API Schlëssel. D'Auswiel vu Land a Plattform geet op den nächsten Écranen weider.",
+        "data": {
+          "tmdb_api_key": "TMDB API Schlëssel"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ongültegen TMDB API Schlëssel oder Service net erreechbar.",
+      "no_results": "Keng Resultater fonnt. Probéiert eng aner Schreifweis.",
+      "cannot_connect": "Kann net verbannen. Préift är Internetverbindung."
+    },
+    "abort": {
+      "already_configured": "Dëst Land ass scho konfiguréiert. Benotzt Optiounen (⚙) fir et ze verwalten, oder füügt en neien Eintrag fir e anert Land derbäi.",
+      "reconfigure_successful": "Nei Konfiguratioun erfollegräich."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Optiounen",
+        "description": "Wat wëllt Dir maachen?",
+        "data": {
+          "action": "Aktioun"
+        }
+      },
+      "tvmaze": {
+        "title": "Eng Serie oder Dokumentar derbäisetzen",
+        "description": "Sicht TVmaze no der Serie oder Dokumentar, déi Dir verfollege wëllt.",
+        "data": {
+          "show_name": "Serie / Dokumentar Numm"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Wielt Serie / Dokumentar",
+        "data": {
+          "show_id": "Serie / Dokumentar"
+        }
+      },
+      "remove_show": {
+        "title": "Eng Serie oder Dokumentar ewechhuelen",
+        "description": "Wielt déi, déi Dir net méi verfollege wëllt.",
+        "data": {
+          "show_id": "Serie / Dokumentar"
+        }
+      },
+      "update_platforms": {
+        "title": "Streaming Plattformen änneren",
+        "description": "D'Lëscht gëtt live vum TMDB fir Äert Land ofgeruff.",
+        "data": {
+          "platforms": "Streaming Plattformen"
+        }
+      },
+      "update_tmdb": {
+        "title": "TMDB Schlëssel / Land / Sprooch aktualiséieren",
+        "description": "D'Lannelëscht gëtt live vum TMDB ofgeruff.",
+        "data": {
+          "tmdb_api_key": "TMDB API Schlëssel",
+          "country": "Land",
+          "language": "Sprooch (optional)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ongültegen TMDB API Schlëssel oder Service net erreechbar.",
+      "no_results": "Keng Resultater fonnt."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Lafend",
+          "Ended": "Enn",
+          "To Be Determined": "Nach ze bestëmmen",
+          "In Development": "An Entwécklung",
+          "Canceled/Ended": "Ofgesot",
+          "In Limbo": "Am Limbo",
+          "Unknown": "Onbekannt"
+        }
+      }
+    }
+  }
+}
