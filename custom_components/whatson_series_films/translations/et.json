@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API võti",
+        "description": "Sisestage oma tasuta TMDB API võti, et lubada voogedastuse ja kino funktsioonid. Jätke tühjaks, et kasutada ainult TVmaze'i (võti pole vajalik).\n\nHankige tasuta võti aadressil [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Arendaja → Isiklikuks kasutamiseks.",
+        "data": {
+          "tmdb_api_key": "TMDB API võti (valikuline)"
+        }
+      },
+      "country": {
+        "title": "Riik ja keel",
+        "description": "Valige oma riik TMDB poolt toetatud riikide loendist. Pealkirjade ja kirjelduste keel tuvastatakse automaatselt — muutke ainult vajadusel.",
+        "data": {
+          "country": "Riik",
+          "language": "Keel (valikuline — automaatselt riigist)"
+        }
+      },
+      "platforms": {
+        "title": "Voogedastusplatvormid",
+        "description": "Need on TMDB andmetel teie riigis saadaolevad platvormid. Valige need, mille tellija olete.",
+        "data": {
+          "platforms": "Voogedastusplatvormid"
+        }
+      },
+      "tvmaze": {
+        "title": "Jälgi seriaali või dokumentaali",
+        "description": "Sisestage nimi, et otsida TVmaze'ist. Jätke tühjaks, et lõpetada ilma ühegi seriaali lisamiseta.",
+        "data": {
+          "show_name": "Seriaali / dokumentaali nimi"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Valige seriaal / dokumentaal",
+        "description": "Valige loendist õige tulemus.",
+        "data": {
+          "show_id": "Seriaal / dokumentaal"
+        }
+      },
+      "add_another": {
+        "title": "Kas lisada veel üks seriaal või dokumentaal?",
+        "description": "Seni lisatud: **{shows_added}**",
+        "data": {
+          "add_another": "Lisa veel üks seriaal või dokumentaal"
+        }
+      },
+      "reconfigure": {
+        "title": "What's On Series & Films ümberkonfigureerimine",
+        "description": "Värskendage oma TMDB API võtit. Järgmistel ekraanidel järgneb riigi ja platvormi valik.",
+        "data": {
+          "tmdb_api_key": "TMDB API võti"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Vigane TMDB API võti või teenus pole kättesaadav.",
+      "no_results": "Tulemusi ei leitud. Proovige teistsugust kirjapilti.",
+      "cannot_connect": "Ühendust ei saa luua. Kontrollige oma internetiühendust."
+    },
+    "abort": {
+      "already_configured": "See riik on juba konfigureeritud. Kasutage selle haldamiseks valikuid (⚙) või lisage uus kanne teise riigi jaoks.",
+      "reconfigure_successful": "Ümberkonfigureerimine õnnestus."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Valikud",
+        "description": "Mida soovite teha?",
+        "data": {
+          "action": "Tegevus"
+        }
+      },
+      "tvmaze": {
+        "title": "Seriaali või dokumentaali lisamine",
+        "description": "Otsige TVmaze'ist seriaali või dokumentaali, mida soovite jälgida.",
+        "data": {
+          "show_name": "Seriaali / dokumentaali nimi"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Valige seriaal / dokumentaal",
+        "data": {
+          "show_id": "Seriaal / dokumentaal"
+        }
+      },
+      "remove_show": {
+        "title": "Seriaali või dokumentaali eemaldamine",
+        "description": "Valige see, mida soovite lõpetada jälgimast.",
+        "data": {
+          "show_id": "Seriaal / dokumentaal"
+        }
+      },
+      "update_platforms": {
+        "title": "Voogedastusplatvormide muutmine",
+        "description": "Loend tuuakse reaalajas TMDB-st teie riigi jaoks.",
+        "data": {
+          "platforms": "Voogedastusplatvormid"
+        }
+      },
+      "update_tmdb": {
+        "title": "TMDB võtme / riigi / keele värskendamine",
+        "description": "Riikide loend tuuakse reaalajas TMDB-st.",
+        "data": {
+          "tmdb_api_key": "TMDB API võti",
+          "country": "Riik",
+          "language": "Keel (valikuline)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Vigane TMDB API võti või teenus pole kättesaadav.",
+      "no_results": "Tulemusi ei leitud."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Olek",
+        "state": {
+          "Running": "Käimas",
+          "Ended": "Lõppenud",
+          "To Be Determined": "Määramisel",
+          "In Development": "Arenduses",
+          "Canceled/Ended": "Tühistatud",
+          "In Limbo": "Ootejärjekorras",
+          "Unknown": "Teadmata"
+        }
+      }
+    }
+  }
+}
