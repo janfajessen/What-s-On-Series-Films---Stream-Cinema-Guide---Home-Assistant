@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API atslēga",
+        "description": "Ievadiet savu bezmaksas TMDB API atslēgu, lai aktivizētu straumēšanas un kino funkcijas. Atstājiet tukšu, lai izmantotu tikai TVmaze (atslēga nav nepieciešama).\n\nIegūstiet bezmaksas atslēgu vietnē [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Izstrādātājs → Personīgai lietošanai.",
+        "data": {
+          "tmdb_api_key": "TMDB API atslēga (neobligāta)"
+        }
+      },
+      "country": {
+        "title": "Valsts un valoda",
+        "description": "Izvēlieties savu valsti no TMDB atbalstīto valstu saraksta. Nosaukumu un aprakstu valoda tiek noteikta automātiski — ignorējiet tikai nepieciešamības gadījumā.",
+        "data": {
+          "country": "Valsts",
+          "language": "Valoda (neobligāta — automātiski no valsts)"
+        }
+      },
+      "platforms": {
+        "title": "Straumēšanas platformas",
+        "description": "Šīs ir platformas, kas ir pieejamas jūsu valstī saskaņā ar TMDB. Izvēlieties tās, kurām esat abonējis.",
+        "data": {
+          "platforms": "Straumēšanas platformas"
+        }
+      },
+      "tvmaze": {
+        "title": "Sekot seriālam vai dokumentālai filmai",
+        "description": "Ierakstiet nosaukumu, lai meklētu TVmaze. Atstājiet tukšu, lai pabeigtu, nepievienojot nevienu seriālu.",
+        "data": {
+          "show_name": "Seriāla / dokumentālās filmas nosaukums"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Izvēlieties seriālu / dokumentālo filmu",
+        "description": "Izvēlieties pareizo rezultātu no saraksta.",
+        "data": {
+          "show_id": "Seriāls / dokumentālā filma"
+        }
+      },
+      "add_another": {
+        "title": "Pievienot vēl vienu seriālu vai dokumentālo filmu?",
+        "description": "Līdz šim pievienots: **{shows_added}**",
+        "data": {
+          "add_another": "Pievienot vēl vienu seriālu vai dokumentālo filmu"
+        }
+      },
+      "reconfigure": {
+        "title": "Pārkonfigurēt What's On Series & Films",
+        "description": "Atjauniniet savu TMDB API atslēgu. Valsts un platformas izvēle turpināsies nākamajos ekrānos.",
+        "data": {
+          "tmdb_api_key": "TMDB API atslēga"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Nederīga TMDB API atslēga vai pakalpojums nav sasniedzams.",
+      "no_results": "Nav atrasts neviens rezultāts. Izmēģiniet citu pareizrakstību.",
+      "cannot_connect": "Nevar izveidot savienojumu. Pārbaudiet savu interneta savienojumu."
+    },
+    "abort": {
+      "already_configured": "Šī valsts jau ir konfigurēta. Izmantojiet opcijas (⚙), lai to pārvaldītu, vai pievienojiet jaunu ierakstu citai valstij.",
+      "reconfigure_successful": "Pārkonfigurēšana veiksmīga."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Opcijas",
+        "description": "Ko jūs vēlētos darīt?",
+        "data": {
+          "action": "Darbība"
+        }
+      },
+      "tvmaze": {
+        "title": "Pievienot seriālu vai dokumentālo filmu",
+        "description": "Meklējiet TVmaze seriālu vai dokumentālo filmu, kurai vēlaties sekot.",
+        "data": {
+          "show_name": "Seriāla / dokumentālās filmas nosaukums"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Izvēlieties seriālu / dokumentālo filmu",
+        "data": {
+          "show_id": "Seriāls / dokumentālā filma"
+        }
+      },
+      "remove_show": {
+        "title": "Noņemt seriālu vai dokumentālo filmu",
+        "description": "Izvēlieties to, kuru vēlaties pārtraukt sekot.",
+        "data": {
+          "show_id": "Seriāls / dokumentālā filma"
+        }
+      },
+      "update_platforms": {
+        "title": "Mainīt straumēšanas platformas",
+        "description": "Saraksts tiek tieši iegūts no TMDB jūsu valstij.",
+        "data": {
+          "platforms": "Straumēšanas platformas"
+        }
+      },
+      "update_tmdb": {
+        "title": "Atjaunināt TMDB atslēgu / valsti / valodu",
+        "description": "Valstu saraksts tiek tieši iegūts no TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API atslēga",
+          "country": "Valsts",
+          "language": "Valoda (neobligāta)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Nederīga TMDB API atslēga vai pakalpojums nav sasniedzams.",
+      "no_results": "Nav atrasts neviens rezultāts."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Statuss",
+        "state": {
+          "Running": "Notiek",
+          "Ended": "Beidzies",
+          "To Be Determined": "Tiks noteikts",
+          "In Development": "Izstrādē",
+          "Canceled/Ended": "Atcelts",
+          "In Limbo": "Nenoteiktībā",
+          "Unknown": "Nezināms"
+        }
+      }
+    }
+  }
+}
