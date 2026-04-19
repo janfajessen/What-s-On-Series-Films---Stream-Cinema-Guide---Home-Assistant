@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API-nyckel",
+        "description": "Ange din gratis TMDB API-nyckel för att aktivera streaming- och biofunktioner. Lämna tomt för att endast använda TVmaze (ingen nyckel behövs).\n\nFå en gratis nyckel på [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Utvecklare → Personligt bruk.",
+        "data": {
+          "tmdb_api_key": "TMDB API-nyckel (valfri)"
+        }
+      },
+      "country": {
+        "title": "Land och språk",
+        "description": "Välj ditt land från listan över länder som stöds av TMDB. Språket för titlar och beskrivningar upptäcks automatiskt — åsidosätt endast om det behövs.",
+        "data": {
+          "country": "Land",
+          "language": "Språk (valfritt — upptäcks automatiskt från land)"
+        }
+      },
+      "platforms": {
+        "title": "Streamingplattformar",
+        "description": "Det här är plattformarna som finns tillgängliga i ditt land enligt TMDB. Välj de du prenumererar på.",
+        "data": {
+          "platforms": "Streamingplattformar"
+        }
+      },
+      "tvmaze": {
+        "title": "Spåra en serie eller dokumentär",
+        "description": "Skriv ett namn för att söka på TVmaze. Lämna tomt för att slutföra utan att lägga till någon serie.",
+        "data": {
+          "show_name": "Serie-/dokumentärnamn"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Välj serie / dokumentär",
+        "description": "Välj rätt resultat från listan.",
+        "data": {
+          "show_id": "Serie / dokumentär"
+        }
+      },
+      "add_another": {
+        "title": "Lägga till ytterligare en serie eller dokumentär?",
+        "description": "Hittills tillagda: **{shows_added}**",
+        "data": {
+          "add_another": "Lägg till ytterligare en serie eller dokumentär"
+        }
+      },
+      "reconfigure": {
+        "title": "Konfigurera om What's On Series & Films",
+        "description": "Uppdatera din TMDB API-nyckel. Val av land och plattform fortsätter på nästa skärmar.",
+        "data": {
+          "tmdb_api_key": "TMDB API-nyckel"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ogiltig TMDB API-nyckel eller tjänsten inte tillgänglig.",
+      "no_results": "Inga resultat hittades. Prova en annan stavning.",
+      "cannot_connect": "Kan inte ansluta. Kontrollera din internetanslutning."
+    },
+    "abort": {
+      "already_configured": "Detta land är redan konfigurerat. Använd alternativ (⚙) för att hantera det, eller lägg till en ny post för ett annat land.",
+      "reconfigure_successful": "Omkonfigurering lyckades."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Alternativ",
+        "description": "Vad vill du göra?",
+        "data": {
+          "action": "Åtgärd"
+        }
+      },
+      "tvmaze": {
+        "title": "Lägg till en serie eller dokumentär",
+        "description": "Sök på TVmaze efter serien eller dokumentären du vill spåra.",
+        "data": {
+          "show_name": "Serie-/dokumentärnamn"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Välj serie / dokumentär",
+        "data": {
+          "show_id": "Serie / dokumentär"
+        }
+      },
+      "remove_show": {
+        "title": "Ta bort en serie eller dokumentär",
+        "description": "Välj den du vill sluta spåra.",
+        "data": {
+          "show_id": "Serie / dokumentär"
+        }
+      },
+      "update_platforms": {
+        "title": "Ändra streamingplattformar",
+        "description": "Listan hämtas live från TMDB för ditt land.",
+        "data": {
+          "platforms": "Streamingplattformar"
+        }
+      },
+      "update_tmdb": {
+        "title": "Uppdatera TMDB-nyckel / land / språk",
+        "description": "Landlistan hämtas live från TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API-nyckel",
+          "country": "Land",
+          "language": "Språk (valfritt)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ogiltig TMDB API-nyckel eller tjänsten inte tillgänglig.",
+      "no_results": "Inga resultat hittades."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Pågående",
+          "Ended": "Avslutad",
+          "To Be Determined": "Kommer att fastställas",
+          "In Development": "Under utveckling",
+          "Canceled/Ended": "Inställd",
+          "In Limbo": "I limbo",
+          "Unknown": "Okänd"
+        }
+      }
+    }
+  }
+}
