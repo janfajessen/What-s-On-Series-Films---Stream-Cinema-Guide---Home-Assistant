@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API-avain",
+        "description": "Syötä ilmainen TMDB API -avaimesi ottaaksesi käyttöön suoratoisto- ja elokuvatoiminnot. Jätä tyhjäksi käyttääksesi vain TVmazea (avainta ei tarvita).\n\nHanki ilmainen avain osoitteesta [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Kehittäjä → Henkilökohtainen käyttö.",
+        "data": {
+          "tmdb_api_key": "TMDB API-avain (valinnainen)"
+        }
+      },
+      "country": {
+        "title": "Maa ja kieli",
+        "description": "Valitse maasi TMDB:n tukemien maiden luettelosta. Otsikoiden ja kuvausten kieli tunnistetaan automaattisesti — ohita vain tarvittaessa.",
+        "data": {
+          "country": "Maa",
+          "language": "Kieli (valinnainen — automaattisesti maasta)"
+        }
+      },
+      "platforms": {
+        "title": "Suoratoistoalustat",
+        "description": "Nämä ovat TMDB:n mukaan maassasi saatavilla olevat alustat. Valitse ne, joihin olet tilannut.",
+        "data": {
+          "platforms": "Suoratoistoalustat"
+        }
+      },
+      "tvmaze": {
+        "title": "Seuraa sarjaa tai dokumenttia",
+        "description": "Kirjoita nimi hakeaksesi TVmazeista. Jätä tyhjäksi lopettaaksesi lisäämättä yhtään sarjaa.",
+        "data": {
+          "show_name": "Sarjan / dokumentin nimi"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Valitse sarja / dokumentti",
+        "description": "Valitse oikea tulos luettelosta.",
+        "data": {
+          "show_id": "Sarja / dokumentti"
+        }
+      },
+      "add_another": {
+        "title": "Lisätäänkö toinen sarja tai dokumentti?",
+        "description": "Tähän mennessä lisätty: **{shows_added}**",
+        "data": {
+          "add_another": "Lisää toinen sarja tai dokumentti"
+        }
+      },
+      "reconfigure": {
+        "title": "Määritä What's On Series & Films uudelleen",
+        "description": "Päivitä TMDB API -avaimesi. Maa- ja alustavalinta jatkuu seuraavilla näytöillä.",
+        "data": {
+          "tmdb_api_key": "TMDB API-avain"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Virheellinen TMDB API -avain tai palvelu ei ole käytettävissä.",
+      "no_results": "Tuloksia ei löytynyt. Kokeile toista kirjoitusasua.",
+      "cannot_connect": "Yhteyttä ei voi muodostaa. Tarkista internetyhteytesi."
+    },
+    "abort": {
+      "already_configured": "Tämä maa on jo määritetty. Käytä asetuksia (⚙) hallitaksesi sitä tai lisää uusi merkintä toiselle maalle.",
+      "reconfigure_successful": "Uudelleenmääritys onnistui."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Asetukset",
+        "description": "Mitä haluat tehdä?",
+        "data": {
+          "action": "Toiminto"
+        }
+      },
+      "tvmaze": {
+        "title": "Lisää sarja tai dokumentti",
+        "description": "Hae TVmazeista sarjaa tai dokumenttia, jota haluat seurata.",
+        "data": {
+          "show_name": "Sarjan / dokumentin nimi"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Valitse sarja / dokumentti",
+        "data": {
+          "show_id": "Sarja / dokumentti"
+        }
+      },
+      "remove_show": {
+        "title": "Poista sarja tai dokumentti",
+        "description": "Valitse se, jonka haluat lopettaa seuraamisen.",
+        "data": {
+          "show_id": "Sarja / dokumentti"
+        }
+      },
+      "update_platforms": {
+        "title": "Vaihda suoratoistoalustoja",
+        "description": "Luettelo haetaan suoraan TMDB:stä maallesi.",
+        "data": {
+          "platforms": "Suoratoistoalustat"
+        }
+      },
+      "update_tmdb": {
+        "title": "Päivitä TMDB-avain / maa / kieli",
+        "description": "Maaluettelo haetaan suoraan TMDB:stä.",
+        "data": {
+          "tmdb_api_key": "TMDB API-avain",
+          "country": "Maa",
+          "language": "Kieli (valinnainen)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Virheellinen TMDB API -avain tai palvelu ei ole käytettävissä.",
+      "no_results": "Tuloksia ei löytynyt."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Tila",
+        "state": {
+          "Running": "Käynnissä",
+          "Ended": "Päättynyt",
+          "To Be Determined": "Määritetään myöhemmin",
+          "In Development": "Kehitteillä",
+          "Canceled/Ended": "Peruttu",
+          "In Limbo": "Epävarma",
+          "Unknown": "Tuntematon"
+        }
+      }
+    }
+  }
+}
