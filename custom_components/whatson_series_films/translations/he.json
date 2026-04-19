@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "מפתח API של TMDB",
+        "description": "הזן את מפתח ה-API החינמי שלך של TMDB כדי להפעיל תכונות סטרימינג וקולנוע. השאר ריק כדי להשתמש רק ב-TVmaze (אין צורך במפתח).\n\nקבל מפתח חינמי ב-[themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → מפתח → שימוש אישי.",
+        "data": {
+          "tmdb_api_key": "מפתח API של TMDB (אופציונלי)"
+        }
+      },
+      "country": {
+        "title": "מדינה ושפה",
+        "description": "בחר את המדינה שלך מרשימת המדינות הנתמכות על ידי TMDB. השפה עבור כותרות ותיאורים מזוהה אוטומטית — דרוס רק אם יש צורך.",
+        "data": {
+          "country": "מדינה",
+          "language": "שפה (אופציונלי — מזוהה אוטומטית מהמדינה)"
+        }
+      },
+      "platforms": {
+        "title": "פלטפורמות סטרימינג",
+        "description": "אלו הן הפלטפורמות הזמינות במדינתך לפי TMDB. בחר את אלו שאתה מנוי להן.",
+        "data": {
+          "platforms": "פלטפורמות סטרימינג"
+        }
+      },
+      "tvmaze": {
+        "title": "מעקב אחר סדרה או סרט תיעודי",
+        "description": "הקלד שם לחיפוש ב-TVmaze. השאר ריק כדי לסיים מבלי להוסיף סדרה.",
+        "data": {
+          "show_name": "שם הסדרה / הסרט התיעודי"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "בחר סדרה / סרט תיעודי",
+        "description": "בחר את התוצאה הנכונה מהרשימה.",
+        "data": {
+          "show_id": "סדרה / סרט תיעודי"
+        }
+      },
+      "add_another": {
+        "title": "להוסיף סדרה או סרט תיעודי נוסף?",
+        "description": "נוספו עד כה: **{shows_added}**",
+        "data": {
+          "add_another": "הוסף סדרה או סרט תיעודי נוסף"
+        }
+      },
+      "reconfigure": {
+        "title": "קבע מחדש את What's On Series & Films",
+        "description": "עדכן את מפתח ה-API של TMDB שלך. בחירת המדינה והפלטפורמה תמשיך במסכים הבאים.",
+        "data": {
+          "tmdb_api_key": "מפתח API של TMDB"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "מפתח API של TMDB לא חוקי או שהשירות אינו נגיש.",
+      "no_results": "לא נמצאו תוצאות. נסה איות אחר.",
+      "cannot_connect": "לא ניתן להתחבר. בדוק את חיבור האינטרנט שלך."
+    },
+    "abort": {
+      "already_configured": "מדינה זו כבר מוגדרת. השתמש באפשרויות (⚙) כדי לנהל אותה, או הוסף ערך חדש למדינה אחרת.",
+      "reconfigure_successful": "הגדרה מחדש הצליחה."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — אפשרויות",
+        "description": "מה תרצה לעשות?",
+        "data": {
+          "action": "פעולה"
+        }
+      },
+      "tvmaze": {
+        "title": "הוסף סדרה או סרט תיעודי",
+        "description": "חפש ב-TVmaze את הסדרה או הסרט התיעודי שברצונך לעקוב אחריהם.",
+        "data": {
+          "show_name": "שם הסדרה / הסרט התיעודי"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "בחר סדרה / סרט תיעודי",
+        "data": {
+          "show_id": "סדרה / סרט תיעודי"
+        }
+      },
+      "remove_show": {
+        "title": "הסר סדרה או סרט תיעודי",
+        "description": "בחר את זה שברצונך להפסיק לעקוב אחריו.",
+        "data": {
+          "show_id": "סדרה / סרט תיעודי"
+        }
+      },
+      "update_platforms": {
+        "title": "שנה פלטפורמות סטרימינג",
+        "description": "הרשימה מתקבלת בזמן אמת מ-TMDB עבור המדינה שלך.",
+        "data": {
+          "platforms": "פלטפורמות סטרימינג"
+        }
+      },
+      "update_tmdb": {
+        "title": "עדכן מפתח TMDB / מדינה / שפה",
+        "description": "רשימת המדינות מתקבלת בזמן אמת מ-TMDB.",
+        "data": {
+          "tmdb_api_key": "מפתח API של TMDB",
+          "country": "מדינה",
+          "language": "שפה (אופציונלי)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "מפתח API של TMDB לא חוקי או שהשירות אינו נגיש.",
+      "no_results": "לא נמצאו תוצאות."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "סטטוס",
+        "state": {
+          "Running": "בשידור",
+          "Ended": "הסתיים",
+          "To Be Determined": "עדיין לא נקבע",
+          "In Development": "בפיתוח",
+          "Canceled/Ended": "בוטל",
+          "In Limbo": "בהמתנה",
+          "Unknown": "לא ידוע"
+        }
+      }
+    }
+  }
+}
