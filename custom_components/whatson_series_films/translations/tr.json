@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API Anahtarı",
+        "description": "Akış ve sinema özelliklerini etkinleştirmek için ücretsiz TMDB API anahtarınızı girin. Yalnızca TVmaze kullanmak için boş bırakın (anahtar gerekmez).\n\n[themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Geliştirici → Kişisel kullanım adresinden ücretsiz bir anahtar alın.",
+        "data": {
+          "tmdb_api_key": "TMDB API Anahtarı (isteğe bağlı)"
+        }
+      },
+      "country": {
+        "title": "Ülke ve Dil",
+        "description": "TMDB tarafından desteklenen ülkeler listesinden ülkenizi seçin. Başlıklar ve açıklamalar için dil otomatik olarak algılanır — yalnızca gerekirse geçersiz kılın.",
+        "data": {
+          "country": "Ülke",
+          "language": "Dil (isteğe bağlı — ülkeden otomatik)"
+        }
+      },
+      "platforms": {
+        "title": "Akış Platformları",
+        "description": "Bunlar TMDB'ye göre ülkenizde bulunan platformlardır. Abone olduklarınızı seçin.",
+        "data": {
+          "platforms": "Akış Platformları"
+        }
+      },
+      "tvmaze": {
+        "title": "Bir Dizi veya Belgeseli Takip Et",
+        "description": "TVmaze'de arama yapmak için bir ad yazın. Dizi eklemeden bitirmek için boş bırakın.",
+        "data": {
+          "show_name": "Dizi / Belgesel adı"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Dizi / Belgesel Seçin",
+        "description": "Listeden doğru sonucu seçin.",
+        "data": {
+          "show_id": "Dizi / Belgesel"
+        }
+      },
+      "add_another": {
+        "title": "Başka Bir Dizi veya Belgesel Eklemek İster misiniz?",
+        "description": "Şu ana kadar eklenen: **{shows_added}**",
+        "data": {
+          "add_another": "Başka bir dizi veya belgesel ekle"
+        }
+      },
+      "reconfigure": {
+        "title": "What's On Series & Films'i Yeniden Yapılandır",
+        "description": "TMDB API anahtarınızı güncelleyin. Ülke ve platform seçimi sonraki ekranlarda devam edecektir.",
+        "data": {
+          "tmdb_api_key": "TMDB API Anahtarı"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Geçersiz TMDB API anahtarı veya hizmete ulaşılamıyor.",
+      "no_results": "Sonuç bulunamadı. Farklı bir yazım deneyin.",
+      "cannot_connect": "Bağlanılamıyor. İnternet bağlantınızı kontrol edin."
+    },
+    "abort": {
+      "already_configured": "Bu ülke zaten yapılandırılmış. Yönetmek için seçenekleri (⚙) kullanın veya farklı bir ülke için yeni bir giriş ekleyin.",
+      "reconfigure_successful": "Yeniden yapılandırma başarılı."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Seçenekler",
+        "description": "Ne yapmak istersiniz?",
+        "data": {
+          "action": "Eylem"
+        }
+      },
+      "tvmaze": {
+        "title": "Bir Dizi veya Belgesel Ekleyin",
+        "description": "Takip etmek istediğiniz dizi veya belgesel için TVmaze'de arama yapın.",
+        "data": {
+          "show_name": "Dizi / Belgesel adı"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Dizi / Belgesel Seçin",
+        "data": {
+          "show_id": "Dizi / Belgesel"
+        }
+      },
+      "remove_show": {
+        "title": "Bir Dizi veya Belgeseli Kaldırın",
+        "description": "Takip etmeyi bırakmak istediğinizi seçin.",
+        "data": {
+          "show_id": "Dizi / Belgesel"
+        }
+      },
+      "update_platforms": {
+        "title": "Akış Platformlarını Değiştirin",
+        "description": "Liste, ülkeniz için TMDB'den canlı olarak alınır.",
+        "data": {
+          "platforms": "Akış Platformları"
+        }
+      },
+      "update_tmdb": {
+        "title": "TMDB Anahtarını / Ülkeyi / Dili Güncelleyin",
+        "description": "Ülke listesi TMDB'den canlı olarak alınır.",
+        "data": {
+          "tmdb_api_key": "TMDB API Anahtarı",
+          "country": "Ülke",
+          "language": "Dil (isteğe bağlı)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Geçersiz TMDB API anahtarı veya hizmete ulaşılamıyor.",
+      "no_results": "Sonuç bulunamadı."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Durum",
+        "state": {
+          "Running": "Devam Ediyor",
+          "Ended": "Sona Erdi",
+          "To Be Determined": "Belirlenecek",
+          "In Development": "Geliştirmede",
+          "Canceled/Ended": "İptal Edildi",
+          "In Limbo": "Belirsiz",
+          "Unknown": "Bilinmiyor"
+        }
+      }
+    }
+  }
+}
