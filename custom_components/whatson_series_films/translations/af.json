@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API-sleutel",
+        "description": "Voer jou gratis TMDB API-sleutel in om stroom- en filmkenmerke te aktiveer. Los leeg om slegs TVmaze te gebruik (geen sleutel nodig).\n\nKry 'n gratis sleutel by [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Ontwikkelaar → Persoonlike gebruik.",
+        "data": {
+          "tmdb_api_key": "TMDB API-sleutel (opsioneel)"
+        }
+      },
+      "country": {
+        "title": "Land & Taal",
+        "description": "Kies jou land uit die lys van lande wat deur TMDB ondersteun word. Die taal vir titels en beskrywings word outomaties opgespoor — oorrideer slegs indien nodig.",
+        "data": {
+          "country": "Land",
+          "language": "Taal (opsioneel — outomaties vanaf land)"
+        }
+      },
+      "platforms": {
+        "title": "Stroomplatforms",
+        "description": "Dit is die platforms wat volgens TMDB in jou land beskikbaar is. Kies die een waarop jy ingeteken is.",
+        "data": {
+          "platforms": "Stroomplatforms"
+        }
+      },
+      "tvmaze": {
+        "title": "Volg 'n Reeks of Dokumentêr",
+        "description": "Tik 'n naam om TVmaze te deursoek. Los leeg om klaar te maak sonder om enige reeks by te voeg.",
+        "data": {
+          "show_name": "Reeks / Dokumentêr naam"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Kies Reeks / Dokumentêr",
+        "description": "Kies die korrekte resultaat uit die lys.",
+        "data": {
+          "show_id": "Reeks / Dokumentêr"
+        }
+      },
+      "add_another": {
+        "title": "Nog 'n Reeks of Dokumentêr byvoeg?",
+        "description": "Tot dusver bygevoeg: **{shows_added}**",
+        "data": {
+          "add_another": "Voeg nog 'n reeks of dokumentêr by"
+        }
+      },
+      "reconfigure": {
+        "title": "Herkonfigureer What's On Series & Films",
+        "description": "Werk jou TMDB API-sleutel by. Die land- en platformkeuse volg op die volgende skerms.",
+        "data": {
+          "tmdb_api_key": "TMDB API-sleutel"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ongeldige TMDB API-sleutel of diens onbereikbaar.",
+      "no_results": "Geen resultate gevind nie. Probeer 'n ander spelling.",
+      "cannot_connect": "Kan nie verbind nie. Gaan jou internetverbinding na."
+    },
+    "abort": {
+      "already_configured": "Hierdie land is reeds gekonfigureer. Gebruik opsies (⚙) om dit te bestuur, of voeg 'n nuwe inskrywing vir 'n ander land by.",
+      "reconfigure_successful": "Herkonfigurasie suksesvol."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Opsies",
+        "description": "Wat wil jy doen?",
+        "data": {
+          "action": "Aksie"
+        }
+      },
+      "tvmaze": {
+        "title": "Voeg 'n Reeks of Dokumentêr by",
+        "description": "Deursoek TVmaze vir die reeks of dokumentêr wat jy wil volg.",
+        "data": {
+          "show_name": "Reeks / Dokumentêr naam"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Kies Reeks / Dokumentêr",
+        "data": {
+          "show_id": "Reeks / Dokumentêr"
+        }
+      },
+      "remove_show": {
+        "title": "Verwyder 'n Reeks of Dokumentêr",
+        "description": "Kies die een om op te hou volg.",
+        "data": {
+          "show_id": "Reeks / Dokumentêr"
+        }
+      },
+      "update_platforms": {
+        "title": "Verander Stroomplatforms",
+        "description": "Die lys word regstreeks van TMDB vir jou land opgehaal.",
+        "data": {
+          "platforms": "Stroomplatforms"
+        }
+      },
+      "update_tmdb": {
+        "title": "Werk TMDB-sleutel / Land / Taal by",
+        "description": "Die landelys word regstreeks van TMDB opgehaal.",
+        "data": {
+          "tmdb_api_key": "TMDB API-sleutel",
+          "country": "Land",
+          "language": "Taal (opsioneel)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ongeldige TMDB API-sleutel of diens onbereikbaar.",
+      "no_results": "Geen resultate gevind nie."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Lopende",
+          "Ended": "Beëindig",
+          "To Be Determined": "Nog te bepaal",
+          "In Development": "In ontwikkeling",
+          "Canceled/Ended": "Gekanselleer",
+          "In Limbo": "In limbo",
+          "Unknown": "Onbekend"
+        }
+      }
+    }
+  }
+}
