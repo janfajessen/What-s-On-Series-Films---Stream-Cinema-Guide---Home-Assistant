@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Kunci API TMDB",
+        "description": "Masukkan kunci API TMDB gratis Anda untuk mengaktifkan fitur streaming dan bioskop. Kosongkan untuk hanya menggunakan TVmaze (tidak perlu kunci).\n\nDapatkan kunci gratis di [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Pengembang → Penggunaan pribadi.",
+        "data": {
+          "tmdb_api_key": "Kunci API TMDB (opsional)"
+        }
+      },
+      "country": {
+        "title": "Negara & Bahasa",
+        "description": "Pilih negara Anda dari daftar negara yang didukung TMDB. Bahasa untuk judul dan deskripsi terdeteksi secara otomatis — timpa hanya jika diperlukan.",
+        "data": {
+          "country": "Negara",
+          "language": "Bahasa (opsional — terdeteksi otomatis dari negara)"
+        }
+      },
+      "platforms": {
+        "title": "Platform Streaming",
+        "description": "Ini adalah platform yang tersedia di negara Anda menurut TMDB. Pilih platform yang Anda langgani.",
+        "data": {
+          "platforms": "Platform Streaming"
+        }
+      },
+      "tvmaze": {
+        "title": "Lacak Seri atau Dok",
+        "description": "Ketik nama untuk mencari TVmaze. Kosongkan untuk selesai tanpa menambahkan seri apa pun.",
+        "data": {
+          "show_name": "Nama Seri / Dok"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Pilih Seri / Dok",
+        "description": "Pilih hasil yang benar dari daftar.",
+        "data": {
+          "show_id": "Seri / Dok"
+        }
+      },
+      "add_another": {
+        "title": "Tambahkan Seri atau Dok Lain?",
+        "description": "Ditambahkan sejauh ini: **{shows_added}**",
+        "data": {
+          "add_another": "Tambahkan seri atau dok lain"
+        }
+      },
+      "reconfigure": {
+        "title": "Konfigurasi Ulang What's On Series & Films",
+        "description": "Perbarui kunci API TMDB Anda. Pemilihan negara dan platform akan mengikuti di layar berikutnya.",
+        "data": {
+          "tmdb_api_key": "Kunci API TMDB"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Kunci API TMDB tidak valid atau layanan tidak terjangkau.",
+      "no_results": "Tidak ada hasil ditemukan. Coba ejaan yang berbeda.",
+      "cannot_connect": "Tidak dapat terhubung. Periksa koneksi internet Anda."
+    },
+    "abort": {
+      "already_configured": "Negara ini sudah dikonfigurasi. Gunakan opsi (⚙) untuk mengelolanya, atau tambahkan entri baru untuk negara yang berbeda.",
+      "reconfigure_successful": "Konfigurasi ulang berhasil."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Opsi",
+        "description": "Apa yang ingin Anda lakukan?",
+        "data": {
+          "action": "Tindakan"
+        }
+      },
+      "tvmaze": {
+        "title": "Tambahkan Seri atau Dok",
+        "description": "Cari TVmaze untuk seri atau dokumenter yang ingin Anda lacak.",
+        "data": {
+          "show_name": "Nama Seri / Dok"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Pilih Seri / Dok",
+        "data": {
+          "show_id": "Seri / Dok"
+        }
+      },
+      "remove_show": {
+        "title": "Hapus Seri atau Dok",
+        "description": "Pilih yang ingin Anda hentikan pelacakannya.",
+        "data": {
+          "show_id": "Seri / Dok"
+        }
+      },
+      "update_platforms": {
+        "title": "Ubah Platform Streaming",
+        "description": "Daftar diambil langsung dari TMDB untuk negara Anda.",
+        "data": {
+          "platforms": "Platform Streaming"
+        }
+      },
+      "update_tmdb": {
+        "title": "Perbarui Kunci TMDB / Negara / Bahasa",
+        "description": "Daftar negara diambil langsung dari TMDB.",
+        "data": {
+          "tmdb_api_key": "Kunci API TMDB",
+          "country": "Negara",
+          "language": "Bahasa (opsional)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Kunci API TMDB tidak valid atau layanan tidak terjangkau.",
+      "no_results": "Tidak ada hasil ditemukan."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Berjalan",
+          "Ended": "Berakhir",
+          "To Be Determined": "Akan Ditentukan",
+          "In Development": "Dalam Pengembangan",
+          "Canceled/Ended": "Dibatalkan",
+          "In Limbo": "Dalam Ketidakpastian",
+          "Unknown": "Tidak Diketahui"
+        }
+      }
+    }
+  }
+}
