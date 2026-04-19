@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API-sleutel",
+        "description": "Voer uw gratis TMDB API-sleutel in om streaming- en bioscoopfuncties in te schakelen. Laat leeg om alleen TVmaze te gebruiken (geen sleutel nodig).\n\nKrijg een gratis sleutel op [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Ontwikkelaar → Persoonlijk gebruik.",
+        "data": {
+          "tmdb_api_key": "TMDB API-sleutel (optioneel)"
+        }
+      },
+      "country": {
+        "title": "Land en taal",
+        "description": "Selecteer uw land uit de lijst van landen die door TMDB worden ondersteund. De taal voor titels en beschrijvingen wordt automatisch gedetecteerd — overschrijf alleen indien nodig.",
+        "data": {
+          "country": "Land",
+          "language": "Taal (optioneel — automatisch gedetecteerd uit land)"
+        }
+      },
+      "platforms": {
+        "title": "Streamingplatforms",
+        "description": "Dit zijn de platforms die beschikbaar zijn in uw land volgens TMDB. Selecteer de platforms waarop u bent geabonneerd.",
+        "data": {
+          "platforms": "Streamingplatforms"
+        }
+      },
+      "tvmaze": {
+        "title": "Een serie of docu volgen",
+        "description": "Typ een naam om te zoeken op TVmaze. Laat leeg om te voltooien zonder een serie toe te voegen.",
+        "data": {
+          "show_name": "Serie-/docunaam"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selecteer serie / docu",
+        "description": "Kies het juiste resultaat uit de lijst.",
+        "data": {
+          "show_id": "Serie / docu"
+        }
+      },
+      "add_another": {
+        "title": "Nog een serie of docu toevoegen?",
+        "description": "Tot nu toe toegevoegd: **{shows_added}**",
+        "data": {
+          "add_another": "Nog een serie of docu toevoegen"
+        }
+      },
+      "reconfigure": {
+        "title": "What's On Series & Films opnieuw configureren",
+        "description": "Werk uw TMDB API-sleutel bij. De selectie van land en platform wordt op de volgende schermen voortgezet.",
+        "data": {
+          "tmdb_api_key": "TMDB API-sleutel"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ongeldige TMDB API-sleutel of service onbereikbaar.",
+      "no_results": "Geen resultaten gevonden. Probeer een andere spelling.",
+      "cannot_connect": "Kan geen verbinding maken. Controleer uw internetverbinding."
+    },
+    "abort": {
+      "already_configured": "Dit land is al geconfigureerd. Gebruik opties (⚙) om het te beheren, of voeg een nieuwe invoer toe voor een ander land.",
+      "reconfigure_successful": "Herconfiguratie geslaagd."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Opties",
+        "description": "Wat wilt u doen?",
+        "data": {
+          "action": "Actie"
+        }
+      },
+      "tvmaze": {
+        "title": "Een serie of docu toevoegen",
+        "description": "Zoek op TVmaze naar de serie of documentaire die u wilt volgen.",
+        "data": {
+          "show_name": "Serie-/docunaam"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selecteer serie / docu",
+        "data": {
+          "show_id": "Serie / docu"
+        }
+      },
+      "remove_show": {
+        "title": "Een serie of docu verwijderen",
+        "description": "Selecteer degene die u niet meer wilt volgen.",
+        "data": {
+          "show_id": "Serie / docu"
+        }
+      },
+      "update_platforms": {
+        "title": "Streamingplatforms wijzigen",
+        "description": "De lijst wordt live opgehaald van TMDB voor uw land.",
+        "data": {
+          "platforms": "Streamingplatforms"
+        }
+      },
+      "update_tmdb": {
+        "title": "TMDB-sleutel / land / taal bijwerken",
+        "description": "De landenlijst wordt live opgehaald van TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API-sleutel",
+          "country": "Land",
+          "language": "Taal (optioneel)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ongeldige TMDB API-sleutel of service onbereikbaar.",
+      "no_results": "Geen resultaten gevonden."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Actief",
+          "Ended": "Beëindigd",
+          "To Be Determined": "Nog te bepalen",
+          "In Development": "In ontwikkeling",
+          "Canceled/Ended": "Geannuleerd",
+          "In Limbo": "In limbo",
+          "Unknown": "Onbekend"
+        }
+      }
+    }
+  }
+}
