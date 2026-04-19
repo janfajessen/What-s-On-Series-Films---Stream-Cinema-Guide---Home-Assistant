@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Khóa API TMDB",
+        "description": "Nhập khóa API TMDB miễn phí của bạn để kích hoạt các tính năng phát trực tuyến và điện ảnh. Để trống để chỉ sử dụng TVmaze (không cần khóa).\n\nNhận khóa miễn phí tại [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Nhà phát triển → Sử dụng cá nhân.",
+        "data": {
+          "tmdb_api_key": "Khóa API TMDB (tùy chọn)"
+        }
+      },
+      "country": {
+        "title": "Quốc gia và Ngôn ngữ",
+        "description": "Chọn quốc gia của bạn từ danh sách các quốc gia được TMDB hỗ trợ. Ngôn ngữ cho tiêu đề và mô tả được tự động phát hiện — chỉ ghi đè nếu cần.",
+        "data": {
+          "country": "Quốc gia",
+          "language": "Ngôn ngữ (tùy chọn — tự động từ quốc gia)"
+        }
+      },
+      "platforms": {
+        "title": "Nền tảng Phát trực tuyến",
+        "description": "Đây là các nền tảng có sẵn tại quốc gia của bạn theo TMDB. Chọn những nền tảng bạn đăng ký.",
+        "data": {
+          "platforms": "Nền tảng Phát trực tuyến"
+        }
+      },
+      "tvmaze": {
+        "title": "Theo dõi Phim bộ hoặc Phim tài liệu",
+        "description": "Nhập tên để tìm kiếm trên TVmaze. Để trống để kết thúc mà không thêm bất kỳ bộ phim nào.",
+        "data": {
+          "show_name": "Tên phim bộ / phim tài liệu"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Chọn Phim bộ / Phim tài liệu",
+        "description": "Chọn kết quả chính xác từ danh sách.",
+        "data": {
+          "show_id": "Phim bộ / phim tài liệu"
+        }
+      },
+      "add_another": {
+        "title": "Thêm một Phim bộ hoặc Phim tài liệu khác?",
+        "description": "Đã thêm cho đến nay: **{shows_added}**",
+        "data": {
+          "add_another": "Thêm một phim bộ hoặc phim tài liệu khác"
+        }
+      },
+      "reconfigure": {
+        "title": "Cấu hình lại What's On Series & Films",
+        "description": "Cập nhật khóa API TMDB của bạn. Việc chọn quốc gia và nền tảng sẽ tiếp tục ở các màn hình tiếp theo.",
+        "data": {
+          "tmdb_api_key": "Khóa API TMDB"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Khóa API TMDB không hợp lệ hoặc dịch vụ không thể truy cập.",
+      "no_results": "Không tìm thấy kết quả. Hãy thử cách viết khác.",
+      "cannot_connect": "Không thể kết nối. Kiểm tra kết nối internet của bạn."
+    },
+    "abort": {
+      "already_configured": "Quốc gia này đã được cấu hình. Sử dụng tùy chọn (⚙) để quản lý hoặc thêm mục nhập mới cho một quốc gia khác.",
+      "reconfigure_successful": "Cấu hình lại thành công."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Tùy chọn",
+        "description": "Bạn muốn làm gì?",
+        "data": {
+          "action": "Hành động"
+        }
+      },
+      "tvmaze": {
+        "title": "Thêm Phim bộ hoặc Phim tài liệu",
+        "description": "Tìm kiếm trên TVmaze cho bộ phim hoặc phim tài liệu bạn muốn theo dõi.",
+        "data": {
+          "show_name": "Tên phim bộ / phim tài liệu"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Chọn Phim bộ / Phim tài liệu",
+        "data": {
+          "show_id": "Phim bộ / phim tài liệu"
+        }
+      },
+      "remove_show": {
+        "title": "Xóa Phim bộ hoặc Phim tài liệu",
+        "description": "Chọn phim bạn muốn ngừng theo dõi.",
+        "data": {
+          "show_id": "Phim bộ / phim tài liệu"
+        }
+      },
+      "update_platforms": {
+        "title": "Thay đổi Nền tảng Phát trực tuyến",
+        "description": "Danh sách được lấy trực tiếp từ TMDB cho quốc gia của bạn.",
+        "data": {
+          "platforms": "Nền tảng Phát trực tuyến"
+        }
+      },
+      "update_tmdb": {
+        "title": "Cập nhật Khóa TMDB / Quốc gia / Ngôn ngữ",
+        "description": "Danh sách quốc gia được lấy trực tiếp từ TMDB.",
+        "data": {
+          "tmdb_api_key": "Khóa API TMDB",
+          "country": "Quốc gia",
+          "language": "Ngôn ngữ (tùy chọn)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Khóa API TMDB không hợp lệ hoặc dịch vụ không thể truy cập.",
+      "no_results": "Không tìm thấy kết quả."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Trạng thái",
+        "state": {
+          "Running": "Đang chiếu",
+          "Ended": "Đã kết thúc",
+          "To Be Determined": "Sẽ xác định",
+          "In Development": "Đang phát triển",
+          "Canceled/Ended": "Đã hủy",
+          "In Limbo": "Không chắc chắn",
+          "Unknown": "Không rõ"
+        }
+      }
+    }
+  }
+}
