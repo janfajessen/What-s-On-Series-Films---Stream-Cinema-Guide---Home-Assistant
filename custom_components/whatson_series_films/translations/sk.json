@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API kľúč",
+        "description": "Zadajte svoj bezplatný TMDB API kľúč na povolenie streamovacích a filmových funkcií. Nechajte prázdne, ak chcete použiť iba TVmaze (kľúč nie je potrebný).\n\nZískajte bezplatný kľúč na [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Vývojár → Osobné použitie.",
+        "data": {
+          "tmdb_api_key": "TMDB API kľúč (voliteľné)"
+        }
+      },
+      "country": {
+        "title": "Krajina a jazyk",
+        "description": "Vyberte svoju krajinu zo zoznamu krajín podporovaných TMDB. Jazyk pre názvy a popisy je automaticky detekovaný — prepíšte iba v prípade potreby.",
+        "data": {
+          "country": "Krajina",
+          "language": "Jazyk (voliteľný — automaticky z krajiny)"
+        }
+      },
+      "platforms": {
+        "title": "Streamovacie platformy",
+        "description": "Toto sú platformy dostupné vo vašej krajine podľa TMDB. Vyberte tie, ktoré máte predplatené.",
+        "data": {
+          "platforms": "Streamovacie platformy"
+        }
+      },
+      "tvmaze": {
+        "title": "Sledovať seriál alebo dokument",
+        "description": "Zadajte názov pre vyhľadávanie v TVmaze. Nechajte prázdne pre dokončenie bez pridania seriálu.",
+        "data": {
+          "show_name": "Názov seriálu / dokumentu"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Vyberte seriál / dokument",
+        "description": "Vyberte správny výsledok zo zoznamu.",
+        "data": {
+          "show_id": "Seriál / dokument"
+        }
+      },
+      "add_another": {
+        "title": "Pridať ďalší seriál alebo dokument?",
+        "description": "Doteraz pridané: **{shows_added}**",
+        "data": {
+          "add_another": "Pridať ďalší seriál alebo dokument"
+        }
+      },
+      "reconfigure": {
+        "title": "Prekonfigurovať What's On Series & Films",
+        "description": "Aktualizujte svoj TMDB API kľúč. Výber krajiny a platformy bude nasledovať na ďalších obrazovkách.",
+        "data": {
+          "tmdb_api_key": "TMDB API kľúč"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Neplatný TMDB API kľúč alebo služba nedostupná.",
+      "no_results": "Neboli nájdené žiadne výsledky. Skúste iný pravopis.",
+      "cannot_connect": "Nie je možné pripojiť sa. Skontrolujte svoje internetové pripojenie."
+    },
+    "abort": {
+      "already_configured": "Táto krajina je už nakonfigurovaná. Použite možnosti (⚙) na správu, alebo pridajte nový záznam pre inú krajinu.",
+      "reconfigure_successful": "Prekonfigurovanie úspešné."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Možnosti",
+        "description": "Čo chcete urobiť?",
+        "data": {
+          "action": "Akcia"
+        }
+      },
+      "tvmaze": {
+        "title": "Pridať seriál alebo dokument",
+        "description": "Vyhľadajte na TVmaze seriál alebo dokument, ktorý chcete sledovať.",
+        "data": {
+          "show_name": "Názov seriálu / dokumentu"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Vyberte seriál / dokument",
+        "data": {
+          "show_id": "Seriál / dokument"
+        }
+      },
+      "remove_show": {
+        "title": "Odstrániť seriál alebo dokument",
+        "description": "Vyberte ten, ktorý chcete prestať sledovať.",
+        "data": {
+          "show_id": "Seriál / dokument"
+        }
+      },
+      "update_platforms": {
+        "title": "Zmeniť streamovacie platformy",
+        "description": "Zoznam je naživo načítaný z TMDB pre vašu krajinu.",
+        "data": {
+          "platforms": "Streamovacie platformy"
+        }
+      },
+      "update_tmdb": {
+        "title": "Aktualizovať TMDB kľúč / krajinu / jazyk",
+        "description": "Zoznam krajín je naživo načítaný z TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API kľúč",
+          "country": "Krajina",
+          "language": "Jazyk (voliteľný)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Neplatný TMDB API kľúč alebo služba nedostupná.",
+      "no_results": "Neboli nájdené žiadne výsledky."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Stav",
+        "state": {
+          "Running": "Prebieha",
+          "Ended": "Ukončený",
+          "To Be Determined": "Bude určené",
+          "In Development": "Vo vývoji",
+          "Canceled/Ended": "Zrušený",
+          "In Limbo": "V neistote",
+          "Unknown": "Neznámy"
+        }
+      }
+    }
+  }
+}
