@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API-kaai",
+        "description": "Fier jo fergese TMDB API-kaai yn om streaming- en bioskoopfunksjes yn te skeakeljen. Lit leech om allinich TVmaze te brûken (gjin kaai nedich).\n\nKrij in fergese kaai op [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Untwikkelder → Persoanlik gebrûk.",
+        "data": {
+          "tmdb_api_key": "TMDB API-kaai (opsjoneel)"
+        }
+      },
+      "country": {
+        "title": "Lân & Taal",
+        "description": "Selektearje jo lân út 'e list fan lannen stipe troch TMDB. De taal foar titels en beskriuwingen wurdt automatysk ûntdutsen — allinich oerskriuwe as nedich.",
+        "data": {
+          "country": "Lân",
+          "language": "Taal (opsjoneel — automatysk fan lân)"
+        }
+      },
+      "platforms": {
+        "title": "Streamingplatfoarms",
+        "description": "Dit binne de platfoarms beskikber yn jo lân neffens TMDB. Selektearje dejingen wêrop jo ynskreaun binne.",
+        "data": {
+          "platforms": "Streamingplatfoarms"
+        }
+      },
+      "tvmaze": {
+        "title": "Folch in searje of dokumintêre",
+        "description": "Typ in namme om TVmaze te sykjen. Lit leech om te einigjen sûnder in searje ta te foegjen.",
+        "data": {
+          "show_name": "Searje / dokumintêre namme"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selektearje searje / dokumintêre",
+        "description": "Kies it goede resultaat út 'e list.",
+        "data": {
+          "show_id": "Searje / dokumintêre"
+        }
+      },
+      "add_another": {
+        "title": "Noch in searje of dokumintêre tafoegje?",
+        "description": "Oant no ta tafoege: **{shows_added}**",
+        "data": {
+          "add_another": "Foegje noch in searje of dokumintêre ta"
+        }
+      },
+      "reconfigure": {
+        "title": "What's On Series & Films opnij konfigurearje",
+        "description": "Wurkje jo TMDB API-kaai by. De seleksje fan lân en platfoarm folget op 'e folgjende skermen.",
+        "data": {
+          "tmdb_api_key": "TMDB API-kaai"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Unjildich TMDB API-kaai of tsjinst net berikber.",
+      "no_results": "Gjin resultaten fûn. Besykje in oare stavering.",
+      "cannot_connect": "Kin gjin ferbining meitsje. Kontrolearje jo ynternetferbining."
+    },
+    "abort": {
+      "already_configured": "Dit lân is al konfigurearre. Brûk opsjes (⚙) om it te behearjen, of foegje in nij yngong ta foar in oar lân.",
+      "reconfigure_successful": "Opnij konfigurearjen slagge."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Opsjes",
+        "description": "Wat wolle jo dwaan?",
+        "data": {
+          "action": "Aksje"
+        }
+      },
+      "tvmaze": {
+        "title": "Foegje in searje of dokumintêre ta",
+        "description": "Sykje TVmaze nei de searje of dokumintêre dy't jo folgje wolle.",
+        "data": {
+          "show_name": "Searje / dokumintêre namme"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selektearje searje / dokumintêre",
+        "data": {
+          "show_id": "Searje / dokumintêre"
+        }
+      },
+      "remove_show": {
+        "title": "Ferwiderje in searje of dokumintêre",
+        "description": "Selektearje dejinge dy't jo stopje wolle mei folgjen.",
+        "data": {
+          "show_id": "Searje / dokumintêre"
+        }
+      },
+      "update_platforms": {
+        "title": "Feroarje streamingplatfoarms",
+        "description": "De list wurdt live fan TMDB helle foar jo lân.",
+        "data": {
+          "platforms": "Streamingplatfoarms"
+        }
+      },
+      "update_tmdb": {
+        "title": "Wurkje TMDB-kaai / lân / taal by",
+        "description": "De lannelist wurdt live fan TMDB helle.",
+        "data": {
+          "tmdb_api_key": "TMDB API-kaai",
+          "country": "Lân",
+          "language": "Taal (opsjoneel)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Unjildich TMDB API-kaai of tsjinst net berikber.",
+      "no_results": "Gjin resultaten fûn."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Rint",
+          "Ended": "Einige",
+          "To Be Determined": "No te bepalen",
+          "In Development": "Yn ûntwikkeling",
+          "Canceled/Ended": "Annulearre",
+          "In Limbo": "Yn limbo",
+          "Unknown": "Onbekend"
+        }
+      }
+    }
+  }
+}
