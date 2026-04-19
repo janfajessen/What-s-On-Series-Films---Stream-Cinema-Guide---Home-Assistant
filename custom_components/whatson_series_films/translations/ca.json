@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Clau API de TMDB",
+        "description": "Introdueix la teva clau gratuïta de l'API de TMDB per activar les funcions de streaming i cinema. Deixa-ho buit per utilitzar només TVmaze (no cal clau).\n\nObtén una clau gratuïta a [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Desenvolupador → Ús personal.",
+        "data": {
+          "tmdb_api_key": "Clau API de TMDB (opcional)"
+        }
+      },
+      "country": {
+        "title": "País i idioma",
+        "description": "Selecciona el teu país de la llista de països compatibles amb TMDB. L'idioma dels títols i descripcions es detecta automàticament — només canvia-ho si cal.",
+        "data": {
+          "country": "País",
+          "language": "Idioma (opcional — detectat automàticament del país)"
+        }
+      },
+      "platforms": {
+        "title": "Plataformes de streaming",
+        "description": "Aquestes són les plataformes disponibles al teu país segons TMDB. Selecciona les que tens subscrites.",
+        "data": {
+          "platforms": "Plataformes de streaming"
+        }
+      },
+      "tvmaze": {
+        "title": "Fes el seguiment d'una sèrie o documental",
+        "description": "Escriu un nom per cercar a TVmaze. Deixa-ho buit per acabar sense afegir cap sèrie.",
+        "data": {
+          "show_name": "Nom de la sèrie / documental"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selecciona la sèrie / documental",
+        "description": "Tria el resultat correcte de la llista.",
+        "data": {
+          "show_id": "Sèrie / documental"
+        }
+      },
+      "add_another": {
+        "title": "Vols afegir una altra sèrie o documental?",
+        "description": "Afegits fins ara: **{shows_added}**",
+        "data": {
+          "add_another": "Afegeix una altra sèrie o documental"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigura What's On Series & Films",
+        "description": "Actualitza la teva clau API de TMDB. La selecció de país i plataforma continuarà a les següents pantalles.",
+        "data": {
+          "tmdb_api_key": "Clau API de TMDB"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Clau API de TMDB no vàlida o servei inaccessible.",
+      "no_results": "No s'han trobat resultats. Prova una ortografia diferent.",
+      "cannot_connect": "No es pot connectar. Comprova la connexió a internet."
+    },
+    "abort": {
+      "already_configured": "Aquest país ja està configurat. Utilitza les opcions (⚙) per gestionar-lo, o afegeix una nova entrada per a un país diferent.",
+      "reconfigure_successful": "Reconfiguració exitosa."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Opcions",
+        "description": "Què vols fer?",
+        "data": {
+          "action": "Acció"
+        }
+      },
+      "tvmaze": {
+        "title": "Afegeix una sèrie o documental",
+        "description": "Cerca a TVmaze la sèrie o documental que vols seguir.",
+        "data": {
+          "show_name": "Nom de la sèrie / documental"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selecciona la sèrie / documental",
+        "data": {
+          "show_id": "Sèrie / documental"
+        }
+      },
+      "remove_show": {
+        "title": "Elimina una sèrie o documental",
+        "description": "Selecciona el que vols deixar de seguir.",
+        "data": {
+          "show_id": "Sèrie / documental"
+        }
+      },
+      "update_platforms": {
+        "title": "Canvia les plataformes de streaming",
+        "description": "La llista s'obté en directe de TMDB per al teu país.",
+        "data": {
+          "platforms": "Plataformes de streaming"
+        }
+      },
+      "update_tmdb": {
+        "title": "Actualitza la clau TMDB / país / idioma",
+        "description": "La llista de països s'obté en directe de TMDB.",
+        "data": {
+          "tmdb_api_key": "Clau API de TMDB",
+          "country": "País",
+          "language": "Idioma (opcional)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Clau API de TMDB no vàlida o servei inaccessible.",
+      "no_results": "No s'han trobat resultats."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Estat",
+        "state": {
+          "Running": "En emissió",
+          "Ended": "Finalitzada",
+          "To Be Determined": "Per determinar",
+          "In Development": "En desenvolupament",
+          "Canceled/Ended": "Cancel·lada",
+          "In Limbo": "En llimbs",
+          "Unknown": "Desconegut"
+        }
+      }
+    }
+  }
+}
