@@ -3,7 +3,7 @@
 # What's On Series & Films 
 ## Stream and Cinema Guide <br> Home Assistant Integration
 
-..........   <img src="brands/logo@2x.png" width="550"/>
+..........   <img src="https://github.com/janfajessen/What-s-On-Series-Films---Stream-Cinema-Guide---Home-Assistant/blob/b623505e98daec5410aafe7553caa792e2ba6631/brand/logo%402x.png" width="550"/>
 
 ![Version](https://img.shields.io/badge/version-1.7.17-blue?style=for-the-badge)
 ![HA](https://img.shields.io/badge/Home%20Assistant-2024.1+-orange?style=for-the-badge&logo=home-assistant)
@@ -120,7 +120,8 @@ The TMDB API key is **free** and takes about 2 minutes to get:
 2. Add `https://github.com/janfajessen/whatson_series_films` — category **Integration**
 3. Search for **What's On Series & Films** and install
 4. Restart Home Assistant
-<img src="brands/icon@2x.png" width="100"/>
+
+<img src="https://github.com/janfajessen/What-s-On-Series-Films---Stream-Cinema-Guide---Home-Assistant/blob/b623505e98daec5410aafe7553caa792e2ba6631/brand/icon%402x.png" width="100"/>
 
 
 ### Manual
