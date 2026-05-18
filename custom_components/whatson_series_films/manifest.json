@@ -1,7 +1,7 @@
 {
   "domain": "whatson_series_films",
   "name": "What's On Series & Films",
-  "version": "1.0.0",
+  "version": "1.7.20",
   "config_flow": true,
   "documentation": "https://github.com/janfajessen/What-s-On-Series-Films---Stream-Cinema-Guide---Home-Assistant",
   "issue_tracker": "https://github.com/janfajessen/What-s-On-Series-Films---Stream-Cinema-Guide---Home-Assistant/issues",
